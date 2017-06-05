@@ -21,6 +21,7 @@ pipeline {
                     findbugs defaultEncoding: '', excludePattern: '', failedNewAll: '0', healthy: '', includePattern: '', pattern: '', unHealthy: '', unstableNewAll: '0', useStableBuildAsReference: true
                 }
             }
+        }
         stage('Deploy') {
             steps {
                 sh 'mvn -e source:jar javadoc:jar deploy'
