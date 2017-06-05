@@ -12,7 +12,7 @@ pipeline {
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml'
-                    jacoco()
+                    jacoco exclusionPattern: '**/gate/gui/**'
                 }
             }
         }
