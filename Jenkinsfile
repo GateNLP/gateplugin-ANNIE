@@ -18,7 +18,7 @@ pipeline {
                 success {
                     junit 'target/surefire-reports/**/*.xml'
                     jacoco exclusionPattern: '**/gate/gui/**'
-                    findbugs defaultEncoding: '', excludePattern: '**/gate/resources/**,**/gate/jape/parser/**', failedNewAll: '0', healthy: '', includePattern: '', pattern: '**/findbugsXml.xml', unHealthy: '', unstableNewAll: '0', useStableBuildAsReference: true
+                    findbugs excludePattern: '**/gate/resources/**,**/gate/jape/parser/**', failedNewAll: '0', pattern: '**/findbugsXml.xml', unstableNewAll: '0', useStableBuildAsReference: true
                 }
             }
         }
