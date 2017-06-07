@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers {
+        upstream(upstreamProjects: "gate-top", threshold: hudson.model.Result.SUCCESS)
+    }
     tools { 
         maven 'Maven 3.3.9' 
         jdk 'JDK1.8' 
