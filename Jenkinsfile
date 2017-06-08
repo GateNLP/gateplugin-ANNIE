@@ -32,6 +32,7 @@ pipeline {
         stage('Deploy') {
             when{
                 branch 'master'
+                expression { currentBuild.result == "SUCCESS" }
             }
             steps {
                 sh 'mvn -e source:jar javadoc:jar deploy'
