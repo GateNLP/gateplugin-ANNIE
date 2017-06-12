@@ -10,10 +10,13 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                sh 'mvn -e clean install' 
+                sh 'mvn -e clean compile' 
             }
         }
         stage('Document') {
+            when{
+                expression { currentBuild.result != "FAILED" }
+            }
             steps {
                 sh 'mvn -e site'
             }
@@ -35,7 +38,7 @@ pipeline {
                 expression { currentBuild.result == "SUCCESS" }
             }
             steps {
-                sh 'mvn -e source:jar javadoc:jar deploy'
+                sh 'mvn -e -Dmaven.test.skip=true source:jar javadoc:jar deploy'
             }
         }
     }
