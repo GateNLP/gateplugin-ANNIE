@@ -23,7 +23,7 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/**/*.xml'
-                    jacoco exclusionPattern: '**/gate/gui/**'
+                    jacoco exclusionPattern: '**/gate/gui/**,**/gate/resources/**'
                     findbugs canRunOnFailed: true, excludePattern: '**/gate/resources/**,**/gate/jape/parser/**', failedNewAll: '0', pattern: '**/findbugsXml.xml', unstableNewAll: '0', useStableBuildAsReference: true
                     warnings canRunOnFailed: true, canResolveRelativePaths: false, consoleParsers: [[parserName: 'Java Compiler (javac)']], defaultEncoding: 'UTF-8', excludePattern: "**/test/**,**/gate/jape/parser/**", failedNewAll: '0', unstableNewAll: '0', useStableBuildAsReference: true
                 }
