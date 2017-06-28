@@ -14,6 +14,9 @@
 
 package gate.creole.splitter;
 
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import gate.AnnotationSet;
 import gate.Factory;
 import gate.FeatureMap;
@@ -23,6 +26,7 @@ import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ExecutionInterruptedException;
 import gate.creole.ResourceInstantiationException;
+import gate.creole.ResourceReference;
 import gate.creole.Transducer;
 import gate.creole.gazetteer.DefaultGazetteer;
 import gate.creole.metadata.CreoleParameter;
@@ -253,17 +257,27 @@ public class SentenceSplitter extends AbstractLanguageAnalyser implements Benchm
 
   @Optional
   @CreoleParameter(defaultValue="resources/sentenceSplitter/grammar/main-single-nl.jape", comment="The URL to the custom Jape grammar file", suffixes="jape")
-  public void setTransducerURL(java.net.URL newTransducerURL) {
+  public void setTransducerURL(ResourceReference newTransducerURL) {
     transducerURL = newTransducerURL;
   }
-  public java.net.URL getTransducerURL() {
+  
+  @Deprecated
+  public void setTransducerURL(URL newTransducerURL) {
+    try {
+      this.setTransducerURL(new ResourceReference(newTransducerURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
+  }
+  
+  public ResourceReference getTransducerURL() {
     return transducerURL;
   }
   DefaultGazetteer gazetteer;
   AbstractLanguageAnalyser transducer;
-  private java.net.URL transducerURL;
+  private ResourceReference transducerURL;
   private String encoding;
-  private java.net.URL gazetteerListsURL;
+  private ResourceReference gazetteerListsURL;
 
 
   @CreoleParameter(comment="The encoding used for reading the definition files", defaultValue="UTF-8")
@@ -276,10 +290,20 @@ public class SentenceSplitter extends AbstractLanguageAnalyser implements Benchm
   
   @Optional
   @CreoleParameter(defaultValue="resources/sentenceSplitter/gazetteer/lists.def", comment="The URL to the custom list lookup definition file", suffixes="def")
-  public void setGazetteerListsURL(java.net.URL newGazetteerListsURL) {
+  public void setGazetteerListsURL(ResourceReference newGazetteerListsURL) {
     gazetteerListsURL = newGazetteerListsURL;
   }
-  public java.net.URL getGazetteerListsURL() {
+  
+  @Deprecated
+  public void setGazetteerListsURL(URL newGazetteerListsURL) {
+    try {
+      this.setGazetteerListsURL(new ResourceReference(newGazetteerListsURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
+  }
+  
+  public ResourceReference getGazetteerListsURL() {
     return gazetteerListsURL;
   }
   

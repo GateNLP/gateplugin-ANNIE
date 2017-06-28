@@ -18,7 +18,6 @@
 package gate.creole.gazetteer;
 
 import java.io.IOException;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashSet;

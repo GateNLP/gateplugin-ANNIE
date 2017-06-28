@@ -14,6 +14,7 @@
 package gate.creole.splitter;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 import java.util.regex.*;
@@ -83,17 +84,17 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
   /**
    * URL pointing to a file with regex patterns for internal sentence splits.
    */
-  protected URL internalSplitListURL;
+  protected ResourceReference internalSplitListURL;
 
   /**
    * URL pointing to a file with regex patterns for external sentence splits.
    */
-  protected URL externalSplitListURL;
+  protected ResourceReference externalSplitListURL;
 
   /**
    * URL pointing to a file with regex patterns for non sentence splits.
    */
-  protected URL nonSplitListURL;
+  protected ResourceReference nonSplitListURL;
 
 
   protected Pattern internalSplitsPattern;
@@ -355,9 +356,9 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
         throw new ResourceInstantiationException("No encoding provided!");
 
       //load the known abbreviations list
-      internalSplitsPattern = compilePattern(internalSplitListURL, encoding);
-      externalSplitsPattern = compilePattern(externalSplitListURL, encoding);
-      nonSplitsPattern = compilePattern(nonSplitListURL, encoding);
+      internalSplitsPattern = compilePattern(internalSplitListURL.toURL(), encoding);
+      externalSplitsPattern = compilePattern(externalSplitListURL.toURL(), encoding);
+      nonSplitsPattern = compilePattern(nonSplitListURL.toURL(), encoding);
     } catch(UnsupportedEncodingException e) {
       throw new ResourceInstantiationException(e);
     } catch(IOException e) {
@@ -402,7 +403,7 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
   /**
    * @return the internalSplitListURL
    */
-  public URL getInternalSplitListURL() {
+  public ResourceReference getInternalSplitListURL() {
     return internalSplitListURL;
   }
 
@@ -410,14 +411,23 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
    * @param internalSplitListURL the internalSplitListURL to set
    */
   @CreoleParameter(defaultValue="resources/regex-splitter/internal-split-patterns.txt", suffixes="txt", comment="The URL to the internal splits pattern list")
-  public void setInternalSplitListURL(URL internalSplitListURL) {
+  public void setInternalSplitListURL(ResourceReference internalSplitListURL) {
     this.internalSplitListURL = internalSplitListURL;
+  }
+  
+  @Deprecated
+  public void setInternalSplitListURL(URL internalSplitListURL) {
+    try {
+      this.setInternalSplitListURL(new ResourceReference(internalSplitListURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
   }
 
   /**
    * @return the externalSplitListURL
    */
-  public URL getExternalSplitListURL() {
+  public ResourceReference getExternalSplitListURL() {
     return externalSplitListURL;
   }
 
@@ -425,14 +435,23 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
    * @param externalSplitListURL the externalSplitListURL to set
    */
   @CreoleParameter(defaultValue="resources/regex-splitter/external-split-patterns.txt", comment="The URL to the external splits pattern list", suffixes="txt")
-  public void setExternalSplitListURL(URL externalSplitListURL) {
+  public void setExternalSplitListURL(ResourceReference externalSplitListURL) {
     this.externalSplitListURL = externalSplitListURL;
+  }
+  
+  @Deprecated
+  public void setExternalSplitListURL(URL externalSplitListURL) {
+    try {
+      this.setExternalSplitListURL(new ResourceReference(externalSplitListURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
   }
 
   /**
    * @return the nonSplitListURL
    */
-  public URL getNonSplitListURL() {
+  public ResourceReference getNonSplitListURL() {
     return nonSplitListURL;
   }
 
@@ -440,8 +459,17 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
    * @param nonSplitListURL the nonSplitListURL to set
    */
   @CreoleParameter(defaultValue="resources/regex-splitter/non-split-patterns.txt", comment="The URL to the non splits pattern list", suffixes="txt")
-  public void setNonSplitListURL(URL nonSplitListURL) {
+  public void setNonSplitListURL(ResourceReference nonSplitListURL) {
     this.nonSplitListURL = nonSplitListURL;
+  }
+  
+  @Deprecated
+  public void setNonSplitListURL(URL nonSplitListURL) {
+    try {
+      this.setNonSplitListURL(new ResourceReference(nonSplitListURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
   }
 
   /**

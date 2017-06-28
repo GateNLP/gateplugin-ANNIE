@@ -19,6 +19,8 @@ package gate.creole.tokeniser;
 import java.io.BufferedReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.Collections;
@@ -43,6 +45,7 @@ import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ExecutionInterruptedException;
 import gate.creole.ResourceInstantiationException;
+import gate.creole.ResourceReference;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.creole.metadata.Optional;
@@ -51,7 +54,6 @@ import gate.util.BomStrippingInputStreamReader;
 import gate.util.Err;
 import gate.util.GateRuntimeException;
 import gate.util.InvalidOffsetException;
-import gate.util.GateRuntimeException;
 
 /** Implementation of a Unicode rule based tokeniser.
  * The tokeniser gets its rules from a file an {@link java.io.InputStream
@@ -753,14 +755,24 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
    * @param newRulesURL
    */
   @CreoleParameter(defaultValue="resources/tokeniser/DefaultTokeniser.rules", comment="The URL to the rules file", suffixes="rules")
-  public void setRulesURL(java.net.URL newRulesURL) {
+  public void setRulesURL(ResourceReference newRulesURL) {
     rulesURL = newRulesURL;
   }
+  
+  @Deprecated
+  public void setRulesURL(URL newRulesURL) {
+		try {
+			this.setRulesURL(new ResourceReference(newRulesURL));
+		} catch (URISyntaxException e) {
+			throw new RuntimeException("Error converting URL to ResourceReference", e);
+		}
+  }
+  
   /**
    * Gets the value of the <code>rulesURL</code> property hich holds an
    * URL to the file containing the rules for this tokeniser.
    */
-  public java.net.URL getRulesURL() {
+  public ResourceReference getRulesURL() {
     return rulesURL;
   }
     
@@ -847,7 +859,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
                             "creole/tokeniser/DefaultTokeniser.rules";
 
   private String rulesResourceName;
-  private java.net.URL rulesURL;
+  private ResourceReference rulesURL;
   private String encoding;
 
   //kalina: added this as method to minimise too many init() calls

@@ -32,6 +32,7 @@ package gate.creole.orthomatcher;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,6 +54,7 @@ import gate.Resource;
 import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
+import gate.creole.ResourceReference;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.creole.metadata.Optional;
@@ -173,7 +175,7 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
   /**
    * URL to the file containing the definition for this orthomatcher
    */
-  private java.net.URL definitionFileURL;
+  private ResourceReference definitionFileURL;
 
   private Double minimumNicknameLikelihood;
 
@@ -259,7 +261,7 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
 
       URL nicknameURL = null;
       if (nicknameFile != null)
-        nicknameURL = new URL(definitionFileURL, nicknameFile);
+        nicknameURL = new URL(definitionFileURL.toURL(), nicknameFile);
       this.orthoAnnotation = new BasicAnnotationOrthography(
               personType,extLists,unknownType,nicknameURL,
               minimumNicknameLikelihood, encoding);
@@ -997,7 +999,7 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
   protected void createAnnotList(String nameFile, String nameList)
           throws IOException {
     // create the relative URL
-    URL fileURL = new URL(definitionFileURL, nameFile);
+    URL fileURL = new URL(definitionFileURL.toURL(), nameFile);
     BufferedReader bufferedReader = null;
     try {
       bufferedReader =
@@ -1364,11 +1366,20 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
   }//noMatchRule2
 
   @CreoleParameter(comment="The URL to the definition file", defaultValue="resources/othomatcher/listsNM.def", suffixes="def")
-  public void setDefinitionFileURL(java.net.URL definitionFileURL) {
+  public void setDefinitionFileURL(ResourceReference definitionFileURL) {
     this.definitionFileURL = definitionFileURL;
   }
+  
+  @Deprecated
+  public void setDefinitionFileURL(URL definitionFileURL) {
+    try {
+      this.setDefinitionFileURL(new ResourceReference(definitionFileURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
+  }
 
-  public java.net.URL getDefinitionFileURL() {
+  public ResourceReference getDefinitionFileURL() {
     return definitionFileURL;
   }
   

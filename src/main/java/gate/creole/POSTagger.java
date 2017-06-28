@@ -14,6 +14,8 @@
 
 package gate.creole;
 
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -118,7 +120,7 @@ public class POSTagger extends AbstractLanguageAnalyser {
         "No URL provided for the rules!");
     }
     try{
-      tagger = new hepple.postag.POSTagger(lexiconURL,rulesURL, encoding, separator);
+      tagger = new hepple.postag.POSTagger(lexiconURL.toURL(),rulesURL.toURL(), encoding, separator);
     }catch(Exception e){
       throw new ResourceInstantiationException(e);
     }
@@ -396,17 +398,36 @@ Out.prln("POS after execution time:" + postTime);
   
   @Optional
   @CreoleParameter(comment="The URL to the lexicon file", defaultValue="resources/heptag/lexicon")
-  public void setLexiconURL(java.net.URL newLexiconURL) {
-    lexiconURL = newLexiconURL;
+  public void setLexiconURL(ResourceReference newLexiconURL) {
+	  lexiconURL = newLexiconURL;
   }
-  public java.net.URL getLexiconURL() {
+  
+  @Deprecated
+  public void setLexiconURL(URL newLexiconURL) {
+		try {
+			this.setLexiconURL(new ResourceReference(newLexiconURL));
+		} catch (URISyntaxException e) {
+			throw new RuntimeException("Error converting URL to ResourceReference", e);
+		}
+  }
+  
+  public ResourceReference getLexiconURL() {
     return lexiconURL;
   }
   
   @Optional
   @CreoleParameter(comment="The URL to the ruleset file", defaultValue="resources/heptag/ruleset")
+  public void setRulesURL(ResourceReference newRulesURL) {
+	  this.rulesURL = newRulesURL;
+  }
+  
+  @Deprecated
   public void setRulesURL(java.net.URL newRulesURL) {
-    rulesURL = newRulesURL;
+		try {
+			this.setRulesURL(new ResourceReference(newRulesURL));
+		} catch (URISyntaxException e) {
+			throw new RuntimeException("Error converting URL to ResourceReference", e);
+		}
   }
   
   @Optional
@@ -415,7 +436,7 @@ Out.prln("POS after execution time:" + postTime);
     this.encoding = encoding;
   }
 
-  public java.net.URL getRulesURL() {
+  public ResourceReference getRulesURL() {
     return rulesURL;
   }
   
@@ -483,8 +504,8 @@ Out.prln("POS after execution time:" + postTime);
   }
   
   protected hepple.postag.POSTagger tagger;
-  private java.net.URL lexiconURL;
-  private java.net.URL rulesURL;
+  private ResourceReference lexiconURL;
+  private ResourceReference rulesURL;
   private String inputASName;
   private String encoding;
   private String separator;

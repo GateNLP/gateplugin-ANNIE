@@ -1,29 +1,11 @@
 package gate.gui.jape;
 
-import gate.LanguageAnalyser;
-import gate.Resource;
-import gate.creole.ANNIEConstants;
-import gate.creole.AbstractProcessingResource;
-import gate.creole.AbstractVisualResource;
-import gate.creole.ResourceInstantiationException;
-import gate.creole.ResourceReference;
-import gate.creole.metadata.CreoleResource;
-import gate.creole.metadata.GuiType;
-import gate.event.ProgressListener;
-import gate.jape.parser.ParseCpslConstants;
-import gate.jape.parser.ParseCpslTokenManager;
-import gate.jape.parser.SimpleCharStream;
-import gate.jape.parser.Token;
-import gate.util.BomStrippingInputStreamReader;
-import gate.util.GateRuntimeException;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +24,23 @@ import javax.swing.text.StyledDocument;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
+
+import gate.LanguageAnalyser;
+import gate.Resource;
+import gate.creole.ANNIEConstants;
+import gate.creole.AbstractProcessingResource;
+import gate.creole.AbstractVisualResource;
+import gate.creole.ResourceInstantiationException;
+import gate.creole.ResourceReference;
+import gate.creole.metadata.CreoleResource;
+import gate.creole.metadata.GuiType;
+import gate.event.ProgressListener;
+import gate.jape.parser.ParseCpslConstants;
+import gate.jape.parser.ParseCpslTokenManager;
+import gate.jape.parser.SimpleCharStream;
+import gate.jape.parser.Token;
+import gate.util.BomStrippingInputStreamReader;
+import gate.util.GateRuntimeException;
 
 /**
  * A JAPE viewer that allows access to all phases of the grammar and

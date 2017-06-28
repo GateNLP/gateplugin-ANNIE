@@ -17,6 +17,7 @@
 package gate.creole.coref;
 
 import java.io.Serializable;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,6 +41,7 @@ import gate.Resource;
 import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ResourceInstantiationException;
+import gate.creole.ResourceReference;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.util.Benchmark;
@@ -64,26 +66,44 @@ public class PronominalCoref extends AbstractLanguageAnalyser
   /** --- */
   private static final boolean DEBUG = false;
 
-  private URL qtGrammarURL;
+  private ResourceReference qtGrammarURL;
   
-  public URL getQuotedGrammarURL() {
+  public ResourceReference getQuotedGrammarURL() {
 	  return qtGrammarURL;
   }
   
   @CreoleParameter(defaultValue="resources/coref/quoted_text.jape")
-  public void setQuotedGrammarURL(URL qtGrammarURL) {
+  public void setQuotedGrammarURL(ResourceReference qtGrammarURL) {
 	  this.qtGrammarURL = qtGrammarURL;
   }
   
-  private URL pleonGrammarURL;
+  @Deprecated
+  public void setQuotedGrammarURL(URL qtGrammarURL) {
+		try {
+			this.setQuotedGrammarURL(new ResourceReference(qtGrammarURL));
+		} catch (URISyntaxException e) {
+			throw new RuntimeException("Error converting URL to ResourceReference", e);
+		}
+  }
   
-  public URL getPleonasmGrammarURL() {
+  private ResourceReference pleonGrammarURL;
+  
+  public ResourceReference getPleonasmGrammarURL() {
 	  return pleonGrammarURL;
   }
   
   @CreoleParameter(defaultValue="resources/coref/pleonasm.jape")
-  public void setPleonasmGrammarURL(URL pleonGrammarURL) {
+  public void setPleonasmGrammarURL(ResourceReference pleonGrammarURL) {
 	  this.pleonGrammarURL = pleonGrammarURL;
+  }
+  
+  @Deprecated
+  public void setPleonasmGrammarURL(URL pleonGrammarURL) {
+		try {
+			this.setPleonasmGrammarURL(new ResourceReference(pleonGrammarURL));
+		} catch (URISyntaxException e) {
+			throw new RuntimeException("Error converting URL to ResourceReference", e);
+		}
   }
 
   //annotation types

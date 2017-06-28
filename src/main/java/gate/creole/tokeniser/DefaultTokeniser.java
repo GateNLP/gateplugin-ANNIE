@@ -1,5 +1,8 @@
 package gate.creole.tokeniser;
 
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import gate.Factory;
 import gate.FeatureMap;
 import gate.Gate;
@@ -8,6 +11,7 @@ import gate.creole.AbstractLanguageAnalyser;
 import gate.creole.ExecutionException;
 import gate.creole.ExecutionInterruptedException;
 import gate.creole.ResourceInstantiationException;
+import gate.creole.ResourceReference;
 import gate.creole.Transducer;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
@@ -206,10 +210,20 @@ public class DefaultTokeniser extends AbstractLanguageAnalyser implements Benchm
   }
 
   @CreoleParameter(defaultValue="resources/tokeniser/DefaultTokeniser.rules", comment="The URL to the rules file", suffixes="rules")
-  public void setTokeniserRulesURL(java.net.URL tokeniserRulesURL) {
+  public void setTokeniserRulesURL(ResourceReference tokeniserRulesURL) {
     this.tokeniserRulesURL = tokeniserRulesURL;
   }
-  public java.net.URL getTokeniserRulesURL() {
+  
+  @Deprecated
+  public void setTokeniserRulesURL(URL tokeniserRulesURL) {
+    try {
+      this.setTokeniserRulesURL(new ResourceReference(tokeniserRulesURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
+  }
+  
+  public ResourceReference getTokeniserRulesURL() {
     return tokeniserRulesURL;
   }
   
@@ -222,10 +236,20 @@ public class DefaultTokeniser extends AbstractLanguageAnalyser implements Benchm
   }
   
   @CreoleParameter(defaultValue="resources/tokeniser/postprocess.jape", comment="The URL to the postprocessing transducer", suffixes="jape")
-  public void setTransducerGrammarURL(java.net.URL transducerGrammarURL) {
+  public void setTransducerGrammarURL(ResourceReference transducerGrammarURL) {
     this.transducerGrammarURL = transducerGrammarURL;
   }
-  public java.net.URL getTransducerGrammarURL() {
+  
+  @Deprecated
+  public void setTransducerGrammarURL(URL transducerGrammarURL) {
+    try {
+      this.setTransducerGrammarURL(new ResourceReference(transducerGrammarURL));
+    } catch (URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference", e);
+    }
+  }
+  
+  public ResourceReference getTransducerGrammarURL() {
     return transducerGrammarURL;
   }
  // init()
@@ -237,9 +261,9 @@ public class DefaultTokeniser extends AbstractLanguageAnalyser implements Benchm
 
   /** the transducer used for post-processing*/
   protected AbstractLanguageAnalyser transducer;
-  private java.net.URL tokeniserRulesURL;
+  private ResourceReference tokeniserRulesURL;
   private String encoding;
-  private java.net.URL transducerGrammarURL;
+  private ResourceReference transducerGrammarURL;
   private String annotationSetName;
   private String benchmarkId;
 
