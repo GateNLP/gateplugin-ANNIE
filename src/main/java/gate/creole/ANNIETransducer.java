@@ -16,6 +16,8 @@ package gate.creole;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.creole.metadata.HiddenCreoleParameter;
+
+import java.net.URISyntaxException;
 import java.net.URL;
 
 /**
@@ -50,11 +52,19 @@ public class ANNIETransducer extends Transducer {
    */
   @HiddenCreoleParameter
   @Override
-  public void setBinaryGrammarURL(URL url) {
+  public void setBinaryGrammarURL(ResourceReference url) {
     super.setBinaryGrammarURL(url);
   }
 
-
+  @Deprecated
+  public void setBinaryGrammarURL(URL url) {
+    try {
+      this.setBinaryGrammarURL(new ResourceReference(url));
+    } catch(URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference",e);
+    }
+  }
+  
   /**
    * The grammarURL parameter provides the ANNIE main.jape file as a default
    * for this PR.

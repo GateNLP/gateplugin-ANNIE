@@ -520,7 +520,7 @@ public class Transducer
   /**
    * The URL to the serialized jape file used as grammar by this transducer.
    */
-  protected java.net.URL binaryGrammarURL;
+  protected ResourceReference binaryGrammarURL;
 
   /**
    * The actual JapeTransducer used for processing the document(s).
@@ -592,7 +592,7 @@ public class Transducer
   protected Boolean enableDebugging = Boolean.FALSE;
 
 
-  public java.net.URL getBinaryGrammarURL() {
+  public ResourceReference getBinaryGrammarURL() {
     return binaryGrammarURL;
   }
 
@@ -602,8 +602,16 @@ public class Transducer
     disjunction = "grammar",
     priority = 100
   )
-  public void setBinaryGrammarURL(java.net.URL binaryGrammarURL) {
+  public void setBinaryGrammarURL(ResourceReference binaryGrammarURL) {
     this.binaryGrammarURL = binaryGrammarURL;
+  }
+  
+  public void setBinaryGrammarURL(URL binaryGrammarURL) {
+    try {
+      this.setBinaryGrammarURL(new ResourceReference(binaryGrammarURL));
+    } catch(URISyntaxException e) {
+      throw new RuntimeException("Error converting URL to ResourceReference",e);
+    }
   }
 
   // methods implemeting ControllerAwarePR
