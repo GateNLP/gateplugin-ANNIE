@@ -14,6 +14,7 @@
 
 package gate.creole;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.text.NumberFormat;
@@ -39,6 +40,7 @@ import gate.creole.metadata.Optional;
 import gate.creole.metadata.RunTime;
 import gate.util.GateRuntimeException;
 import gate.util.OffsetComparator;
+import hepple.postag.InvalidRuleException;
 /**
  * This class is a wrapper for HepTag, Mark Hepple's POS tagger.
  */
@@ -121,7 +123,7 @@ public class POSTagger extends AbstractLanguageAnalyser {
     }
     try{
       tagger = new hepple.postag.POSTagger(lexiconURL.toURL(),rulesURL.toURL(), encoding, separator);
-    }catch(Exception e){
+    }catch(IOException | InvalidRuleException e){
       throw new ResourceInstantiationException(e);
     }
     return this;
