@@ -23,6 +23,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.AbstractSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -883,7 +884,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
 
     Map<Integer, Integer> tempTypeIds = new HashMap<Integer, Integer>();
     maxTypeId = staticFields.size() -1;
-    List<String> mnemonics = new ArrayList<String>();
+    String[] mnemonics = new String[maxTypeId+1];
     Map<String, Integer> tempStringTypeIds = new HashMap<String, Integer>();
 
     
@@ -900,7 +901,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
           fieldName = currentField.getName();
           tempTypeIds.put(new Integer(currentField.getInt(null)),
                                     new Integer(currentId));
-          mnemonics.set(currentId, fieldName);
+          mnemonics[currentId]= fieldName;
           tempStringTypeIds.put(fieldName, new Integer(currentId));
           currentId++;
         }
@@ -919,7 +920,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
     
     ignoreTokens = Collections.unmodifiableSet(toIgnore);
     
-    typeMnemonics = Collections.unmodifiableList(mnemonics);
+    typeMnemonics = Collections.unmodifiableList(Arrays.asList(mnemonics));
   }
 
 } // class DefaultTokeniser
