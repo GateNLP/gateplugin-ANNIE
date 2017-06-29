@@ -74,7 +74,7 @@ public class OrthoMatcherHelper {
 	   * It is used for test purposes.
 	   * This table shows which rules have fired over a corpus.
 	   */
-	  public static boolean[] rulesUsedTable=null;
+	  private static final boolean[] rulesUsedTable;
 	  
 	  static {
 	    rulesUsedTable = new boolean[18];

@@ -827,7 +827,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
 
   /** A set of string representing tokens to be ignored (e.g. blanks
    */
-  static Set<String> ignoreTokens;
+  protected static final Set<String> ignoreTokens;
 
   /** maps from int (the static value on {@link java.lang.Character} to int
    * the internal value used by the tokeniser. The ins values used by the
@@ -835,28 +835,19 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
    * necessary.
    * They map all the public static int members on{@link java.lang.Character}
    */
-  public static final Map<Integer, Integer> typeIds;
+  protected static final Map<Integer, Integer> typeIds;
 
   /** The maximum int value used internally as a type i
    */
-  public static final int maxTypeId;
+  protected static final int maxTypeId;
 
   /** Maps the internal type ids to the type name
    */
-  public static String[] typeMnemonics;
+  protected static final String[] typeMnemonics;
 
   /** Maps from type names to type internal id
    */
-  public static final Map<String, Integer> stringTypeIds;
-
-  /**
-   * This property holds an URL to the file containing the rules for this tokeniser
-   *
-   */
-
-  /**    */
-  static protected String defaultResourceName =
-                            "creole/tokeniser/DefaultTokeniser.rules";
+  protected static final Map<String, Integer> stringTypeIds;
 
   private String rulesResourceName;
   private ResourceReference rulesURL;
@@ -920,10 +911,12 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
     typeIds = Collections.unmodifiableMap(tempTypeIds);
     stringTypeIds = Collections.unmodifiableMap(tempStringTypeIds);
 
-    ignoreTokens = new HashSet<String>();
-    ignoreTokens.add(" ");
-    ignoreTokens.add("\t");
-    ignoreTokens.add("\f");
+    Set<String> toIgnore = new HashSet<String>();
+    toIgnore.add(" ");
+    toIgnore.add("\t");
+    toIgnore.add("\f");
+    
+    ignoreTokens = Collections.unmodifiableSet(toIgnore);
   }
 
 } // class DefaultTokeniser
