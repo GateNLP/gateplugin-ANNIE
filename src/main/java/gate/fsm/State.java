@@ -16,14 +16,15 @@
 
 package gate.fsm;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import gate.jape.BasicPatternElement;
 import gate.jape.JapeConstants;
 import gate.jape.RightHandSide;
 import gate.util.SimpleArraySet;
-
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 /**
  * This class implements a Finite State Machine state.
@@ -129,7 +130,7 @@ public class State implements JapeConstants {
    * Build a new state.
    */
   public State() {
-    myIndex = State.index++;
+    myIndex = index.getAndIncrement();
     isFinal = false;
   }
 
@@ -321,7 +322,7 @@ public class State implements JapeConstants {
    * The class data member used for generating unique indices for State
    * instances.
    */
-  protected static int index = 0;
+  protected static final AtomicInteger index = new AtomicInteger(0);
 
   /**
    * The index in the definition file of the rule that was used for creating

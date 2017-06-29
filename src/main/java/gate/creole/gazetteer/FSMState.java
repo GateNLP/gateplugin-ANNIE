@@ -19,6 +19,8 @@ package gate.creole.gazetteer;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import gate.creole.gazetteer.DefaultGazetteer.CharMap;
 
 /** Implements a state of the deterministic finite state machine of the
@@ -35,7 +37,7 @@ public class FSMState implements Serializable {
    * @param owner a {@link DefaultGazetteer} object
    */
   public FSMState(DefaultGazetteer owner) {
-    myIndex = index++;
+    myIndex = index.getAndIncrement();
     owner.fsmStates.add(this);
   }
 
@@ -174,10 +176,8 @@ public class FSMState implements Serializable {
    * Class member used to generate unique ids for the instances
    *
    */
-  private static int index;
+  private static final AtomicInteger index = new AtomicInteger(0);
 
-  static{
-    index = 0;
-  }
+  
 
 } // class FSMState

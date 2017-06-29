@@ -839,7 +839,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
 
   /** The maximum int value used internally as a type i
    */
-  public static int maxTypeId;
+  public static final int maxTypeId;
 
   /** Maps the internal type ids to the type name
    */

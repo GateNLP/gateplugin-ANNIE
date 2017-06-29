@@ -22,6 +22,7 @@
 package gate.creole.tokeniser;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /** Implements a state of the deterministic finite state machine of the
   * tokeniser.
@@ -40,7 +41,7 @@ class DFSMState implements java.io.Serializable { //extends FSMState{
     * @param owner a {@link DefaultTokeniser DefaultTokeniser} object
     */
   public DFSMState(SimpleTokeniser owner){
-    myIndex = index++;
+    myIndex = index.getAndIncrement();
     owner.dfsmStates.add(this);
   }
 
@@ -269,10 +270,5 @@ class DFSMState implements java.io.Serializable { //extends FSMState{
   int myIndex;
 
   /** Used to generate unique indices for all the objects of this class*/
-  static int index;
-
-  static {
-    index = 0;
-  }
-
+  static final AtomicInteger index = new AtomicInteger(0);
 } // class DFSMState
