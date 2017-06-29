@@ -113,7 +113,7 @@ class FSMState implements java.io.Serializable {
           if(i == SimpleTokeniser.maxTypeId) ///res += "[]";
                 res.append("[]");
           else ///res += SimpleTokeniser.typeMnemonics[i];
-                res.append(SimpleTokeniser.typeMnemonics[i]);
+                res.append(SimpleTokeniser.typeMnemonics.get(i));
 
           ///res += "\" ]\n";
           res.append("\" ]\n");

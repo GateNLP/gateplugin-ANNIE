@@ -97,7 +97,7 @@ class DFSMState implements java.io.Serializable { //extends FSMState{
         res.append(" target ");
         res.append(nextState.getIndex());
         res.append(" label \"");
-        res.append(SimpleTokeniser.typeMnemonics[i]);
+        res.append(SimpleTokeniser.typeMnemonics.get(i));
         res.append("\" ]\n");
       }
     };

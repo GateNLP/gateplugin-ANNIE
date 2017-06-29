@@ -22,6 +22,7 @@ import java.lang.reflect.Modifier;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.AbstractSet;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -843,7 +844,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
 
   /** Maps the internal type ids to the type name
    */
-  protected static final String[] typeMnemonics;
+  protected static final List<String> typeMnemonics;
 
   /** Maps from type names to type internal id
    */
@@ -882,7 +883,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
 
     Map<Integer, Integer> tempTypeIds = new HashMap<Integer, Integer>();
     maxTypeId = staticFields.size() -1;
-    typeMnemonics = new String[maxTypeId + 1];
+    List<String> mnemonics = new ArrayList<String>();
     Map<String, Integer> tempStringTypeIds = new HashMap<String, Integer>();
 
     
@@ -899,7 +900,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
           fieldName = currentField.getName();
           tempTypeIds.put(new Integer(currentField.getInt(null)),
                                     new Integer(currentId));
-          typeMnemonics[currentId] = fieldName;
+          mnemonics.set(currentId, fieldName);
           tempStringTypeIds.put(fieldName, new Integer(currentId));
           currentId++;
         }
@@ -917,6 +918,8 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
     toIgnore.add("\f");
     
     ignoreTokens = Collections.unmodifiableSet(toIgnore);
+    
+    typeMnemonics = Collections.unmodifiableList(mnemonics);
   }
 
 } // class DefaultTokeniser
