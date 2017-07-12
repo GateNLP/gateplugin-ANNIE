@@ -15,6 +15,7 @@
  */
  package gate.creole.gazetteer;
 
+import java.net.URL;
 import java.util.Set;
 
 import gate.creole.ResourceReference;
@@ -53,7 +54,10 @@ public interface Gazetteer extends gate.LanguageAnalyser,gate.ProcessingResource
 
   /**Sets the url of the lists.def file
    * @param newListsURL the url of the lists.def file to be set  */
-  public void setListsURL(ResourceReference newListsURL) ;
+  public void setListsURL(ResourceReference newListsURL);
+  
+  @Deprecated
+  public void setListsURL(URL newListsURL);
 
   /**Triggers case sensitive
    * @param newCaseSensitive turn on or off case sensitivity */
