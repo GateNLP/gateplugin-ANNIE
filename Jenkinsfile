@@ -1,6 +1,7 @@
 pipeline {
     agent any
     triggers {
+        // rebuild this plugin if gate-top gets rebuilt so we can check we are still compatible
         upstream(upstreamProjects: "gate-top", threshold: hudson.model.Result.SUCCESS)
     }
     tools { 
