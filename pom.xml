@@ -6,6 +6,9 @@
 
 	<name>ANNIE</name>
 
+	<description>ANNIE is a general purpose information extraction system that
+	provides the building blocks of many other GATE applications.</description>
+
 	<parent>
 		<groupId>uk.ac.gate</groupId>
 		<artifactId>gate-plugin-base</artifactId>

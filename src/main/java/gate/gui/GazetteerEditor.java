@@ -130,7 +130,13 @@ public class GazetteerEditor extends AbstractVisualResource
     implements GazetteerListener, ActionsPublisher {
 
   public GazetteerEditor() {
-    definitionTableModel = new DefaultTableModel();
+    definitionTableModel = new DefaultTableModel() {
+      @Override
+      public boolean isCellEditable(int row, int column) {
+        return editable;
+      }
+    };
+    
     definitionTableModel.addColumn("List name");
     definitionTableModel.addColumn("Major");
     definitionTableModel.addColumn("Minor");
@@ -254,7 +260,7 @@ public class GazetteerEditor extends AbstractVisualResource
       // shift + Delete keys delete the selected rows
       @Override
       protected void processKeyEvent(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_DELETE
+        if (editable && e.getKeyCode() == KeyEvent.VK_DELETE
         && ((e.getModifiersEx() & KeyEvent.SHIFT_DOWN_MASK) != 0)) {
           new DeleteSelectedLinearNodeAction().actionPerformed(null);
         } else {
@@ -403,7 +409,7 @@ public class GazetteerEditor extends AbstractVisualResource
               newEntryButton.setEnabled(false);
               newEntryButton.setText("Existing ");
             } else {
-              newEntryButton.setEnabled(true);
+              newEntryButton.setEnabled(editable);
               newEntryButton.setText("Add");
             }
             filterListButton.setEnabled(true);
@@ -449,7 +455,7 @@ public class GazetteerEditor extends AbstractVisualResource
       // shift + Delete keys delete the selected rows
       @Override
       protected void processKeyEvent(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_DELETE
+        if (editable && e.getKeyCode() == KeyEvent.VK_DELETE
         && ((e.getModifiersEx() & KeyEvent.SHIFT_DOWN_MASK) != 0)) {
           new DeleteSelectedGazetteerNodeAction().actionPerformed(null);
         } else {
@@ -547,7 +553,7 @@ public class GazetteerEditor extends AbstractVisualResource
               listTableModel.setGazetteerList(linearDefinition.getListsByNode().get(selectedLinearNode));
             }
             listEntryTextField.setEnabled(true);
-            addColumnsButton.setEnabled(true);
+            addColumnsButton.setEnabled(editable);
           }
           if (!listEntryTextField.getText().equals("")) {
             listEntryTextField.setText("");
@@ -787,6 +793,9 @@ public class GazetteerEditor extends AbstractVisualResource
   @Override
   public void processGazetteerEvent(GazetteerEvent e) {
     gazetteer = (Gazetteer) e.getSource();
+    
+    //assume the gazetteer is editable
+    editable = true;
 
     // read and display the definition of the gazetteer
     if (e.getType() == GazetteerEvent.REINIT) {
@@ -833,6 +842,15 @@ public class GazetteerEditor extends AbstractVisualResource
         ioe.printStackTrace();
         return;
       }
+      catch (IllegalArgumentException iae) {
+        //this means a non-file URL so we'll display it but not allow editing
+        editable = false;
+        newListComboBox.setModel(new DefaultComboBoxModel<String>());
+        newListComboBox.setEnabled(false);
+        newListButton.setEnabled(false);
+        return;
+      }
+      
       File gazetteerDirectory = new File(defFile.getParent());
       File[] files = gazetteerDirectory.listFiles(new FilenameFilter() {
         @Override
@@ -847,6 +865,7 @@ public class GazetteerEditor extends AbstractVisualResource
       }
       Arrays.sort(filenames, collator);
       newListComboBox.setModel(new DefaultComboBoxModel<String>(filenames));
+      newListComboBox.setEnabled(true);
       if (filenames.length == 0) {
         newListButton.setEnabled(false);
       }
@@ -896,7 +915,7 @@ public class GazetteerEditor extends AbstractVisualResource
 
     @Override
     public boolean isCellEditable(int row, int column) {
-      return true;
+      return editable;
     }
 
     @Override
@@ -1118,6 +1137,12 @@ public class GazetteerEditor extends AbstractVisualResource
         "Save the definition and all the lists then reinitialise");
       putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke("control S"));
     }
+    
+    @Override
+    public boolean isEnabled() {
+      return editable;
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
       try {
@@ -1149,6 +1174,12 @@ public class GazetteerEditor extends AbstractVisualResource
       putValue(SHORT_DESCRIPTION, "Save the definition and all the lists");
       putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke("control shift S"));
     }
+    
+    @Override
+    public boolean isEnabled() {
+      return editable;
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
       XJFileChooser fileChooser = MainFrame.getFileChooser();
@@ -1199,6 +1230,11 @@ public class GazetteerEditor extends AbstractVisualResource
         "Delete Rows" : "Delete Row");
       putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke("shift DELETE"));
     }
+    
+    @Override
+    public boolean isEnabled() {
+      return editable;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -1220,6 +1256,11 @@ public class GazetteerEditor extends AbstractVisualResource
       super(listTable.getSelectedRowCount() > 1 ?
         "Delete Rows" : "Delete Row");
       putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke("shift DELETE"));
+    }
+    
+    @Override
+    public boolean isEnabled() {
+      return editable;
     }
 
     @Override
@@ -1362,4 +1403,6 @@ public class GazetteerEditor extends AbstractVisualResource
   protected JCheckBox caseInsensitiveCheckBox;
   protected JCheckBox onlyValueCheckBox;
   protected JLabel listCountLabel;
+  
+  protected boolean editable;
 }
