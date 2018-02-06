@@ -671,6 +671,9 @@ public class GazetteerEditor extends AbstractVisualResource
               linearDefinition.setModified(true);
             }
             break;
+          default:
+            // just ignroe the other types
+            break;
         }
       }
     });
