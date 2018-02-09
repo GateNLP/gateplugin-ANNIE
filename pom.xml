@@ -43,6 +43,12 @@
 		</developer>
 	</developers>
 
+	<scm>
+		<connection>scm:git:git://github.com/GateNLP/gateplugin-ANNIE.git</connection>
+		<developerConnection>scm:git:git@github.com:GateNLP/gateplugin-ANNIE.git</developerConnection>
+		<url>https://github.com/GateNLP/gateplugin-ANNIE</url>
+	</scm>
+
 	<dependencies>
 		<!-- add any other libraries your plugin depends on. Any other GATE plugins 
 			you depend on at compile time should use the provided scope -->
