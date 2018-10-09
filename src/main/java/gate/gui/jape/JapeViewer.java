@@ -192,7 +192,11 @@ public class JapeViewer extends AbstractVisualResource implements
     boolean targetOK = true;
     if(target instanceof LanguageAnalyser) {
       try {
-        ((LanguageAnalyser)target).getParameterValue("grammarURL");
+        Object grammarURL = ((LanguageAnalyser)target).getParameterValue("grammarURL");
+        if (grammarURL == null) {
+          throw new IllegalArgumentException("The GATE JAPE viewer can't be used with serialised grammars");
+        }
+        
         ((LanguageAnalyser)target).getParameterValue("encoding");
       } catch(ResourceInstantiationException rie) {
         targetOK = false;
@@ -203,9 +207,9 @@ public class JapeViewer extends AbstractVisualResource implements
      
     if(!targetOK) {
       throw new IllegalArgumentException(
-              "The GATE jape viewer can only be used with a GATE jape transducer!\n"
+              "The GATE JAPE viewer can only be used with a GATE jape transducer!\n"
                       + target.getClass().toString()
-                      + " is not a GATE Jape Transducer!");
+                      + " is not a GATE JAPE Transducer!");
     }
     
     SwingUtilities.invokeLater(new Runnable() {
