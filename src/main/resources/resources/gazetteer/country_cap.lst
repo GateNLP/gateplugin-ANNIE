@@ -99,12 +99,12 @@ GUERNSEY
 GUINEA
 GUYANA
 HAITI
-HAïTI
+HAÏTI
 HERM
 HOLLAND
 HONDURAS
 HONG KONG
-HONGKONG
+HONGKONG:normalized=Hong Kong
 HUNGARY
 ICELAND
 INDIA
@@ -167,8 +167,8 @@ MOROCCO
 MOZAMBIQUE
 MYANMAR
 NZ
-NAMIBIA
-NAMIBIE
+NAMIBIA:normalized=Namibia
+NAMIBIE:normalized=Namibia
 NAURU
 NEPAL
 NETHERLANDS
@@ -182,7 +182,7 @@ NIGERIA
 NIUE
 NORTH KOREA
 NORWAY
-NéPAL
+NÉPAL
 OMAN
 PAKISTAN
 PALAU
@@ -209,7 +209,7 @@ RWANDA
 SAINT KITTSET
 SAINT VINCENT
 SAINT-PIERREET
-SAINTE-HLèNE
+SAINTE-HLÈNE
 SAINTE-LUCIE
 SAMOA
 SAN MARINO
@@ -224,12 +224,12 @@ SOUTH AFRICA
 SOUTH KOREA
 SOVIET UNION
 SPAIN
-SRI LANKA
-SRILANKA
-ST.BARTHéLEMY
+SRI LANKA:normalized=Sri Lanka
+SRILANKA:normalized=Sri Lanka
+ST.BARTHÉLEMY
 SUDAN
-SURINAM
-SURINAME
+SURINAM:normalized=Suriname
+SURINAME:normalized=Suriname
 SVALBARD
 SWAZILAND
 SWEDEN
@@ -238,10 +238,10 @@ SYRIA
 TADJIKISTAN
 TAIWAN
 TANZANIA
-TAïWAN
+TAÏWAN:normalized=Taiwan
 TCHAD
 THAILAND
-THE NETHERLANDS
+THE NETHERLANDS:normalized=The Netherlands
 TIBET
 TOGO
 TOKELAU
@@ -252,44 +252,46 @@ TUNISIA
 TURKEY
 TURKMENISTAN
 TUVALU
-U K
-U.K.
-U S
-U.S.
-U S A
-U.S.A.
+U K:normalized=United Kingdom
+U.K.:normalized=United Kingdom
+U S:normalized=United States of America
+U.S.:normalized=United States of America
+U S A:normalized=United States of America
+U.S.A.:normalized=United States of America
 U S S R
 U.S.S.R.
-UAE
-UK
-US
-USA
+UAE:normalized=United Arab Emirates
+UK:normalized=United Kingdom
+US:normalized=United States of America
+USA:normalized=United States of America
 USSR
 UGANDA
 UKRAINE
-UNITED ARAB EMIRATES
-UNITED KINGDOM
-UNITED STATES
-UNITED STATES OF AMERICA
+UNITED ARAB EMIRATES:normalized=United Arab Emirates
+UNITED KINGDOM:normalized=United Kingdom
+UNITED STATES:normalized=United States of America
+UNITED STATES OF AMERICA:normalized=United States of America
 URUGUAY
 VANUATU
-VATICAN
+VATICAN:normalized=Vatican City
 VATICAN CITY
 VENEZUELA
 VIETNAM
-WALLIS & FUTUNA
-WALLIS AND FUTUNA
+WALLIS & FUTUNA:normalized=Wallis and Futuna
+WALLIS AND FUTUNA:normalized=Wallis and Futuna
 WEST BANK
 WEST GERMANY
 WESTERN SAHARA
 WESTERN SAMOA
 YUGOSLAVIA
-YéMEN
-ZAIRE
+YÉMEN:normalized=Yemen
+YEMEN:normalized=Yemen
+REPUBLIC OF YEMEN:normalized=Yemen
+ZAIRE:normalized=Zaire
 ZAMBIA
-ZAïRE
+ZAÏRE:normalized=Zaire
 ZIMBABWE
-THE NETHERLANDS
+THE NETHERLANDS:normalized=The Netherlands
 ÎLE CLIPPERTO
 ÎLE EUROPA
 ÎLE HOWLAND
@@ -305,8 +307,8 @@ CZECH REPUBLIC
 UZBEKISTAN
 TAJIKISTAN
 BRITISH ISLES
-N. KOREA
-S. KOREA
+N. KOREA:normalized=North Korea
+S. KOREA:normalized=South Korea
 CHECHNYA
 MOLDOVA
 AZERBAIJAN

@@ -104,7 +104,7 @@ Herm
 Holland
 Honduras
 Hong Kong
-Hongkong
+Hongkong:normalized=Hong Kong
 Hungary
 Iceland
 India
@@ -167,8 +167,8 @@ Morocco
 Mozambique
 Myanmar
 NZ
-Namibia
-Namibie
+Namibia:normalized=Namibia
+Namibie:normalized=Namibia
 Nauru
 Nepal
 Netherlands
@@ -224,12 +224,12 @@ South Africa
 South Korea
 Soviet Union
 Spain
-Sri Lanka
-SriLanka
+Sri Lanka:normalized=Sri Lanka
+SriLanka:normalized=Sri Lanka
 St.Barthélemy
 Sudan
-Surinam
-Suriname
+Surinam:normalized=Suriname
+Suriname:normalized=Suriname
 Svalbard
 Swaziland
 Sweden
@@ -238,10 +238,10 @@ Syria
 Tadjikistan
 Taiwan
 Tanzania
-Taïwan
+Taïwan:normalized=Taiwan
 Tchad
 Thailand
-The Netherlands
+The Netherlands:normalized=The Netherlands
 Tibet
 Togo
 Tokelau
@@ -252,44 +252,46 @@ Tunisia
 Turkey
 Turkmenistan
 Tuvalu
-U K
-U.K.
-U S
-U.S.
-U S A
-U.S.A.
+U K:normalized=United Kingdom
+U.K.:normalized=United Kingdom
+U S:normalized=United States of America
+U.S.:normalized=United States of America
+U S A:normalized=United States of America
+U.S.A.:normalized=United States of America
 U S S R
 U.S.S.R.
-UAE
-UK
-US
-USA
+UAE:normalized=United Arab Emirates
+UK:normalized=United Kingdom
+US:normalized=United States of America
+USA:normalized=United States of America
 USSR
 Uganda
 Ukraine
-United Arab Emirates
-United Kingdom
-United States
-United States of America
+United Arab Emirates:normalized=United Arab Emirates
+United Kingdom:normalized=United Kingdom
+United States:normalized=United States of America
+United States of America:normalized=United States of America
 Uruguay
 Vanuatu
-Vatican
+Vatican:normalized=Vatican City
 Vatican City
 Venezuela
 Vietnam
-Wallis & Futuna
-Wallis and Futuna
+Wallis & Futuna:normalized=Wallis and Futuna
+Wallis and Futuna:normalized=Wallis and Futuna
 West Bank
 West Germany
 Western Sahara
 Western Samoa
 Yugoslavia
-Yémen
-Zaire
+Yémen:normalized=Yemen
+Yemen:normalized=Yemen
+Republic of Yemen:normalized=Yemen
+Zaire:normalized=Zaire
 Zambia
-Zaïre
+Zaïre:normalized=Zaire
 Zimbabwe
-the Netherlands
+the Netherlands:normalized=The Netherlands
 Île Clipperto
 Île Europa
 Île Howland
@@ -305,8 +307,8 @@ Czech Republic
 Uzbekistan
 Tajikistan
 British Isles
-N. Korea
-S. Korea
+N. Korea:normalized=North Korea
+S. Korea:normalized=South Korea
 Chechnya
 Moldova
 Azerbaijan
