@@ -196,7 +196,7 @@ public class TestPR extends GATEPluginTestCase
 //      doc3.getAnnotations().get(ANNIEConstants.LOOKUP_ANNOTATION_TYPE).size()== 144);
     assertEquals("Wrong number of annotations produced in " +
             doc3.getSourceUrl().getFile(),
-            282,
+            283,
             doc3.getAnnotations().get(ANNIEConstants.LOOKUP_ANNOTATION_TYPE).size());
   }//testGazetteer
 

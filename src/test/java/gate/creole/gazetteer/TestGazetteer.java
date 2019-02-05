@@ -49,7 +49,7 @@ public class TestGazetteer extends GATEPluginTestCase {
     //test with partial words
     gaz.setWholeWordsOnly(false);
     gaz.execute();
-    assertEquals("Wrong number of annotations produced", 400, resultAS.size());
+    assertEquals("Wrong number of annotations produced", 402, resultAS.size());
     gaz.setWholeWordsOnly(true);
     resultAS.clear();
 
