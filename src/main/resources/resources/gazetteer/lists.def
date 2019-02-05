@@ -17,6 +17,7 @@ country_adj.lst:country_adj:COUNTRYADJ
 country_cap.lst:location:country
 country_code.lst:country_code
 country_lower.lst:location:country
+country_lower_fr.lst:location:country
 currency_prefix.lst:currency_unit:pre_amount
 currency_unit.lst:currency_unit:post_amount
 date_key.lst:date_key
