@@ -499,7 +499,9 @@ public class GazetteerEditor extends AbstractVisualResource
       @Override
       public void actionPerformed(ActionEvent e) {
         // redisplay the table with the new filter option
-        listEntryTextField.setText(listEntryTextField.getText());
+        //listEntryTextField.setText(listEntryTextField.getText());
+        listTableModel.setFilterText(listEntryTextField.getText());
+        listTableModel.fireTableDataChanged();
       }
     });
     listTopPanel.add(regexCheckBox = new JCheckBox("Regex"));
@@ -507,7 +509,9 @@ public class GazetteerEditor extends AbstractVisualResource
     regexCheckBox.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        listEntryTextField.setText(listEntryTextField.getText());
+        //listEntryTextField.setText(listEntryTextField.getText());
+        listTableModel.setFilterText(listEntryTextField.getText());
+        listTableModel.fireTableDataChanged();
       }
     });
     listTopPanel.add(onlyValueCheckBox = new JCheckBox("Value"));
@@ -515,7 +519,9 @@ public class GazetteerEditor extends AbstractVisualResource
     onlyValueCheckBox.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        listEntryTextField.setText(listEntryTextField.getText());
+        //listEntryTextField.setText(listEntryTextField.getText());
+        listTableModel.setFilterText(listEntryTextField.getText());
+        listTableModel.fireTableDataChanged();
       }
     });
 
@@ -1034,8 +1040,8 @@ public class GazetteerEditor extends AbstractVisualResource
       Pattern pattern;
       try {
         pattern = caseInsensitiveCheckBox.isSelected() ?
-          Pattern.compile(patternText, Pattern.CASE_INSENSITIVE) :
-          Pattern.compile(patternText);
+            Pattern.compile(patternText) :
+            Pattern.compile(patternText, Pattern.CASE_INSENSITIVE);
       } catch (PatternSyntaxException e) {
         return;
       }
