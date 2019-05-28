@@ -14,7 +14,7 @@
 		<artifactId>gate-plugin-base</artifactId>
 
 		<!--  we want to use the latest plugin base but... -->
-		<version>8.6-SNAPSHOT</version>
+		<version>8.6</version>
 		<relativePath/>
 	</parent>
 
@@ -26,7 +26,7 @@
 	<!-- this is the description of this plugin -->
 	<groupId>uk.ac.gate.plugins</groupId>
 	<artifactId>annie</artifactId>
-	<version>8.6-SNAPSHOT</version>
+	<version>8.6</version>
 
 	<licenses>
 		<license>
