@@ -19,8 +19,11 @@
 	</parent>
 
 	<properties>
-		<!-- ... once compiled the plugin will still load into 8.5.1 -->
-		<gate-core.version>8.5.1</gate-core.version>
+		<!-- ... if we want we could allow loading into an earlier version,
+		     but note that setting this lower than 8.6-SNAPSHOT causes some
+		     issues around the plugins being loaded uner test and the creole
+		     dependency graphs not being accurate. -->
+		<!--  <gate-core.version>8.5.1</gate-core.version> -->
 	</properties>
 
 	<!-- this is the description of this plugin -->
