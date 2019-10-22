@@ -15,10 +15,29 @@
 
 //note: organization should be included as part of the address ??
 
+Imports: {
+	import static gate.Utils.*;
+	import org.apache.commons.lang.StringUtils;
+}
+
 Phase:	Final
 Input: Token Lookup Jobtitle TempPerson TempLocation TempOrganization TempDate TempTime TempYear TempZone Street Postcode Email Url Phone Ip TempIdentifier TempSpecs Title Split Money
 Options: control = appelt
 
+Rule: NotAnXGaz
+Priority: 10000
+(
+  {Lookup.minorType == blacklist}
+):match
+-->
+:match {
+	Annotation lookup = matchAnnots.iterator().next();
+
+	AnnotationSet tempAnnots = getContainedAnnotations(inputAS, lookup,
+		"Temp"+StringUtils.capitalize(lookup.getFeatures().get("majorType").toString()));
+
+	inputAS.removeAll(tempAnnots);
+}
 
 ///////////////////////////////////////////////////////////////
 Rule: Money

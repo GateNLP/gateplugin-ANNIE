@@ -47,6 +47,7 @@ months.lst:date:month
 more_company.lst:organization:company
 mountain.lst:location:region
 newspapers.lst:organization:newspaper
+organization_blacklist.lst:organization:blacklist
 number_fold.lst:number_fold
 numbers.lst:number
 ordinal.lst:date:ordinal
