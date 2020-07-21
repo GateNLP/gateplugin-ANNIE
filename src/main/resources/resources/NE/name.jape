@@ -529,7 +529,7 @@ Priority: 50
  (PERSONENDING)
 ):foo
 -->
-:loc.TempLocation = {kind = "locName", rule = LocPersonAmbig1}
+:loc.TempLocation = {kind = "locName", rule = LocPersonAmbig1, :loc}
 
 
 Rule: LocPersonAmbig2
@@ -545,7 +545,7 @@ Priority: 50
  (PERSONENDING)?
 ):foo
 -->
-:loc.TempLocation = {kind = "locName", rule = LocPersonAmbig2}
+:loc.TempLocation = {kind = "locName", rule = LocPersonAmbig2, :loc}
 
 
 Rule: LocPersonAmbig3
@@ -1536,6 +1536,10 @@ if (loc != null && loc.size()>0)
 {
 // if it does exist, take the first element in the set
   gate.Annotation locAnn = (gate.Annotation)loc.iterator().next();
+  
+  features.putAll(locAnn.getFeatures());
+  features.remove("minorType");
+  features.remove("majorType");
 //propagate minorType feature (and value) from loc
   features.put("locType", locAnn.getFeatures().get("minorType"));
 }
@@ -1567,6 +1571,11 @@ if (loc != null && loc.size()>0)
 {
 // if it does exist, take the first element in the set
   gate.Annotation locAnn = (gate.Annotation)loc.iterator().next();
+
+  features.putAll(locAnn.getFeatures());
+  features.remove("minorType");
+  features.remove("majorType");
+
 //propagate minorType feature (and value) from loc
   features.put("locType", locAnn.getFeatures().get("minorType"));
 }
@@ -1600,12 +1609,20 @@ gate.AnnotationSet loc2 = (gate.AnnotationSet)loc2Set.get("Lookup");
 if (loc1 != null && loc1.size()>0)
 {
   gate.Annotation loc1Ann = (gate.Annotation)loc1.iterator().next();
+  features.putAll(loc1Ann.getFeatures());
+  features.remove("minorType");
+  features.remove("majorType");
+
   features.put("locType", loc1Ann.getFeatures().get("minorType"));
 }
 
 if (loc2 != null && loc2.size()>0)
 {
   gate.Annotation loc2Ann = (gate.Annotation)loc2.iterator().next();
+  morefeatures.putAll(loc2Ann.getFeatures());
+  morefeatures.remove("minorType");
+  morefeatures.remove("majorType");
+
   morefeatures.put("locType", loc2Ann.getFeatures().get("minorType"));
 }
 
@@ -1660,7 +1677,7 @@ Rule:InLoc1
 )
 :locName
 -->
- :locName.TempLocation = {kind = "locName", rule = InLoc1, locType = :locName.Lookup.minorType}
+ :locName.TempLocation = {kind = "locName", rule = InLoc1, locType = :locName.Lookup.minorType, :locName}
 
 Rule:LocGeneralKey
 Priority: 30

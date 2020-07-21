@@ -1,318 +1,351 @@
-AFGHANISTAN
-ALBANIA
-ALDERNEY
-ALGERIA
-AMERICA
-AMERICAN SAMOA
-ANDORRA
-ANGOLA
-ANGUILLA
-ANTIGUA AND BARBUDA
-ANTILLES
-ARGENTINA
-ARUBA
-ATOLL DE JOHNSTON
-ATOLL DE PALMYRA
-AUSTRALIA
-AUSTRIA
-AZERBAIDJAN
-BAHAMAS
-BAHRAIN
-BANGLADESH
-BARBADOS
-BASSAS
-BASSAS DA INDIA
-BELARUS
-BELAU
-BELGIUM
-BELIZE
-BENIN
-BERMUDA
-BHUTAN
-BOLIVIA
-BORA
-BOSNIA
-BOTSWANA
-BRAZIL
-BRITAIN
-BRITISH INDIAN OCEAN TERRITORY
-BRUNEI
-BULGARIA
-BURKINA
-BURKINA FASO
-BURMA
-BURUNDI
-CAMBODIA
-CAMEROON
-CANADA
-CAPVERT
-CAPE VERDE
-CENTRAL AFRICAN REPUBLIC
-CHAD
-CHILE
-CHINA
-COLOMBIA
-COMORES
-COMOROS
-CONGO
-COSTA RICA
-CROATIA
-CUBA
-CYPRUS
-CZECHOSLOVAKIA
-DENMARK
-DJIBOUTI
-DOMINICA
-DOMINICAN REPUBLIC
-EAST GERMANY
-ECUADOR
-EGYPT
-EL SALVADOR
-EMIRATES
-EQUATORIAL GUINEA
-ESTONIA
-ETHIOPIA
-FEDERAL REPUBLIC OF GERMANY
-FEDERATED STATES OF MICRONESIA
-FIJI
-FINLAND
-FRANCE
-FRENCH GUIANA
-FRENCH POLYNESIA
-FRENCH SOUTHERN AND ANTARCTIC LANDS
-GABON
-GAMBIA
-GAZA STRIP
-GERMAN DEMOCRATIC REPUBLIC
-GERMANY
-GHANA
-GIBRALTAR
-GREAT BRITAIN
-GREECE
-GREENLAND
-GRENADA
-GROENLAND
-GUADELOUPE
-GUAM
-GUATEMALA
-GUERNSEY
-GUINEA
-GUYANA
-HAITI
-HAÏTI
-HERM
-HOLLAND
-HONDURAS
-HONG KONG
-HONGKONG:normalized=Hong Kong
-HUNGARY
-ICELAND
-INDIA
-INDONESIA
-IRAK
-IRAN
-IRAQ
-IRELAND
-ISLE OF MAN
-ISRAEL
-ITALY
-IVORY COAST
-JAMAICA
-JAN MAYEN
-JAPAN
-JERSEY
-JOHNSTON ATOLL
-JORDAN
-KATAR
-KAZAKHSTAN
-KENYA
-KINGMAN REEF
-KIRGHIZISTAN
-KIRIBATI
-KOREA
-KUWAIT
-LAOS
-LATIN AMERICA
-LATVIA
-LEBANON
-LESOTHO
-LETTONIE
-LIBAN
-LIBERIA
-LIBYA
-LIECHTENSTEIN
-LITHUANIA
-LUXEMBOURG
-MACAO
-MACAU
-MADAGASCAR
-MALAWI
-MALAYSIA
-MALDIVES
-MALI
-MALTA
-MAROC
-MARTINIQUE
-MAURITANIA
-MAURITIUS
-MAYOTTE
-MEXICO
-MIQUELON
-MOLDAVIA
-MONACO
-MONGOLIA
-MONTENEGRO
-MONTSERRAT
-MOROCCO
-MOZAMBIQUE
-MYANMAR
-NZ
-NAMIBIA:normalized=Namibia
-NAMIBIE:normalized=Namibia
-NAURU
-NEPAL
-NETHERLANDS
-NETHERLANDS ANTILLES
-NEVIS
-NEW CALEDONIA
-NEW ZEALAND
-NICARAGUA
-NIGER
-NIGERIA
-NIUE
-NORTH KOREA
-NORWAY
-NÉPAL
-OMAN
-PAKISTAN
-PALAU
-PALESTINE
-PALMYRA ATOLL
-PANAMA
-PAPOUA
-PAPOUASIE
-PAPUA NEW GUINEA
-PARAGUAY
-PERU
-PHILIPPINES
-POLAND
-PORTO RICO
-PORTUGAL
-PUERTO RICO
-QATAR
-REUNION
-ROMANIA
-ROYAUME
-RUANDA
-RUSSIA
-RWANDA
-SAINT KITTSET
-SAINT VINCENT
-SAINT-PIERREET
-SAINTE-HLÈNE
-SAINTE-LUCIE
-SAMOA
-SAN MARINO
-SAO TOME AND PRINCIPE
-SAUDI ARABIA
-SENEGAL
-SEYCHELLES
-SIERRA LEONE
-SINGAPORE
-SOMALIA
-SOUTH AFRICA
-SOUTH KOREA
-SOVIET UNION
-SPAIN
-SRI LANKA:normalized=Sri Lanka
-SRILANKA:normalized=Sri Lanka
-ST.BARTHÉLEMY
-SUDAN
-SURINAM:normalized=Suriname
-SURINAME:normalized=Suriname
-SVALBARD
-SWAZILAND
-SWEDEN
-SWITZERLAND
-SYRIA
-TADJIKISTAN
-TAIWAN
-TANZANIA
-TAÏWAN:normalized=Taiwan
-TCHAD
-THAILAND
-THE NETHERLANDS:normalized=The Netherlands
-TIBET
-TOGO
-TOKELAU
-TONGA
-TRINIDAD AND TOBAGO
-TRUST TERRITORY OF THE PACIFIC
-TUNISIA
-TURKEY
-TURKMENISTAN
-TUVALU
-U K:normalized=United Kingdom
-U.K.:normalized=United Kingdom
-U S:normalized=United States of America
-U.S.:normalized=United States of America
-U S A:normalized=United States of America
-U.S.A.:normalized=United States of America
-U S S R
-U.S.S.R.
-UAE:normalized=United Arab Emirates
-UK:normalized=United Kingdom
-US:normalized=United States of America
-USA:normalized=United States of America
-USSR
-UGANDA
-UKRAINE
-UNITED ARAB EMIRATES:normalized=United Arab Emirates
-UNITED KINGDOM:normalized=United Kingdom
-UNITED STATES:normalized=United States of America
-UNITED STATES OF AMERICA:normalized=United States of America
-URUGUAY
-VANUATU
-VATICAN:normalized=Vatican City
-VATICAN CITY
-VENEZUELA
-VIETNAM
-WALLIS & FUTUNA:normalized=Wallis and Futuna
-WALLIS AND FUTUNA:normalized=Wallis and Futuna
-WEST BANK
-WEST GERMANY
-WESTERN SAHARA
-WESTERN SAMOA
-YUGOSLAVIA
-YÉMEN:normalized=Yemen
-YEMEN:normalized=Yemen
-REPUBLIC OF YEMEN:normalized=Yemen
-ZAIRE:normalized=Zaire
-ZAMBIA
-ZAÏRE:normalized=Zaire
-ZIMBABWE
-THE NETHERLANDS:normalized=The Netherlands
-ÎLE CLIPPERTO
-ÎLE EUROPA
-ÎLE HOWLAND
-ÎLE JARVIS
-ÎLE JUAN DE NOVA
-ÎLE NAVASSA
-ÎLE TROMELIN
-MUNCKINLAND
-SLOVENIA
-SLOVAKIA
-SERBIA
-CZECH REPUBLIC
-UZBEKISTAN
-TAJIKISTAN
-BRITISH ISLES
-N. KOREA:normalized=North Korea
-S. KOREA:normalized=South Korea
-CHECHNYA
-MOLDOVA
-AZERBAIJAN
-TRINIDAD
-TOBAGO
-KAZAKSTAN
-RUSSIAN FEDERATON
+AFGHANISTAN:ISO2=AF:ISO3=AFG:name=The Islamic Republi of Afghanistan
+ÅLAND:ISO2=AX:ISO3=ALA:name=Åland
+ÅLAND ISLANDS:ISO2=AX:ISO3=ALA:name=Åland
+ALAND:ISO2=AX:ISO3=ALA:name=Åland
+ALAND ISLANDS:ISO2=AX:ISO3=ALA:name=Åland
+ALBANIA:ISO2=AL:ISO3=ALB:name=The Republic of Albania
+ALGERIA:ISO2=DZ:ISO3=DZA:name=The People's Democratic Republic of Algeria
+AMERICA:ISO2=US:ISO3=USA:name=The United States of America
+AMERICAN SAMOA:ISO2=AS:ISO3=ASM:name=The Territory of American Samoa
+ANDORRA:ISO2=AD:ISO3=AND:name=The Principality of Andorra
+ANGOLA:ISO2=AO:ISO3=AGO:name=The Republic of Angola
+ANGUILLA:ISO2=AI:ISO3=AIA:name=Anguilla
+ANTARCTICA:ISO2=AQ:ISO3=ATA:name=Antarctica
+ANTIGUA AND BARBUDA:ISO2=AG:ISO3=ATG:name=Antigua and Barbuda
+ARGENTINA:ISO2=AR:ISO3=ARG:name=The Argentine Republic
+ARMENIA:ISO2=AM:ISO3=ARM:name=The Republic of Armenia
+ARUBA:ISO2=AW:ISO3=ABW:name=Aruba
+AUSTRALIA:ISO2=AU:ISO3=AUS:name=The Commonwealth of Australia
+AUSTRIA:ISO2=AT:ISO3=AUT:name=Austria
+AZERBAIJAN:ISO2=AZ:ISO3=AZE:name=The Republic of Azerbaijan
+BAHAMAS:ISO2=BS:ISO3=BHS:name=The Commonwealth of The Bahamas
+BAHRAIN:ISO2=BH:ISO3=BHR:name=The Kingdom of Bahrain
+BANGLADESH:ISO2=BD:ISO3=BGD:name=The People's Republic of Bangladesh
+BARBADOS:ISO2=BB:ISO3=BRB:name=Barbados
+BELARUS:ISO2=BY:ISO3=BLR:name=The Republic of Belarus
+BELGIUM:ISO2=BE:ISO3=BEL:name=The Kingdom of Belgium
+BELIZE:ISO2=BZ:ISO3=BLZ:name=Belize
+BENIN:ISO2=BJ:ISO3=BEN:name=The Republic of Benin
+BERMUDA:ISO2=BM:ISO3=BMU:name=Bermuda
+BHUTAN:ISO2=BT:ISO3=BTN:name=The Kingdom of Bhutan
+BOLIVIA:ISO2=BO:ISO3=BOL:name=The Plurinational State of Bolivia
+BONAIRE:ISO2=BQ:ISO3=BES:name=Bonaire, Sint Eustatius and Saba
+SINT EUSTATIUS:ISO2=BQ:ISO3=BES:name=Bonaire, Sint Eustatius and Saba
+SABA:ISO2=BQ:ISO3=BES:name=Bonaire, Sint Eustatius and Saba
+BONAIRE, SINT EUSTATIUS AND SABA:ISO2=BQ:ISO3=BES:name=Bonaire, Sint Eustatius and Saba
+BOSNIA:ISO2=BA:ISO3=BIH:name=Bosnia and Herzegovina
+BOSNIA AND HERZEGOVINA:ISO2=BA:ISO3=BIH:name=Bosnia and Herzegovina
+BOTSWANA:ISO2=BW:ISO3=BWA:name=The Republic of Botswana
+BOUVET ISLAND:ISO2=BV:ISO3=BVT:name=Bouvet Island
+BRAZIL:ISO2=BR:ISO3=BRA:name=The Federative Republic of Brazil
+BRITAIN:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+BRITISH ISLES:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+BRITISH INDIAN OCEAN TERRITORY:ISO2=IO:ISO3=IOT:name=The British Indian Ocean Territory
+BRITISH VIRGIN ISLANDS:ISO2=VG:ISO3=VGB:name=The Virgin Islands
+BRUNEI:ISO2=BN:ISO3=BRN:name=The Nation of Brunei, the Abode of Peace
+BRUNEI DARUSSALAM:ISO2=BN:ISO3=BRN:name=The Nation of Brunei, the Abode of Peace
+BULGARIA:ISO2=BG:ISO3=BGR:name=The Republic of Bulgaria
+BURKINA FASO:ISO2=BF:ISO3=BFA:name=Burkina Faso
+BURMA:ISO2=MM:ISO3=MMR:name=The Republic of the Union of Myanmar
+BURUNDI:ISO2=BI:ISO3=BDI:name=The Republic of Burundi
+CABO VERDE:ISO2=CV:ISO3=CPV:name=The Republic of Cabo Verde
+CAMBODIA:ISO2=KH:ISO3=KHM:name=The Kingdom of Cambodia
+CAMEROON:ISO2=CM:ISO3=CMR:name=The Republic of Cameroon
+CANADA:ISO2=CA:ISO3=CAN:name=Canada
+CAPE VERDE:ISO2=CV:ISO3=CPV:name=The Republic of Cabo Verde
+CARIBBEAN NETHERLANDS:ISO2=BQ:ISO3=BES:name=Bonaire, Sint Eustatius and Saba
+CAYMAN ISLANDS:ISO2=KY:ISO3=CYM:name=The Cayman Islands
+CENTRAL AFRICAN REPUBLIC:ISO2=CF:ISO3=CAF:name=The Central African Republic
+CHAD:ISO2=TD:ISO3=TCD:name=The Republic of Chad
+CHILE:ISO2=CL:ISO3=CHL:name=The Republic of Chile
+CHINA:ISO2=CN:ISO2=CHN:name=The People's Republic of China
+CHRISTMAS ISLAND:ISO2=CX:ISO3=CXR:name=The Territory of Christmas Isalnd
+COCOS:ISO2=CC:ISO3=CCK:name=The Territory of Cocos (Keeling) Islands
+COCOS ISLANDS:ISO2=CC:ISO3=CCK:name=The Territory of Cocos (Keeling) Islands
+COCOS (KEELING) ISLANDS:ISO2=CC:ISO3=CCK:name=The Territory of Cocos (Keeling) Islands
+COLOMBIA:ISO2=CO:ISO3=COL:name=The Republic of Colombia
+COMOROS:ISO2=KM:ISO3=COM:name=The Union of the Comoros
+DEMOCRATIC REPLIC OF THE CONGO:ISO2=CD:ISO3=COD:name=The Democratic Republic of the Congo
+CONGO:ISO2=CG:ISO3=CDG:name=The Republic of the Congo
+COOK ISLANDS:ISO2=CK:ISO3=COK:name=The Cook Islands
+COSTA RICA:ISO2=CR:ISO3=CRI:name=The Republic of Costa Rica
+CÔTE D'IVOIRE:ISO2=CI:ISO3=CIV:name=The Republic of Côte d'Ivoire
+CROATIA:ISO2=HR:ISO3=HRV:name=The Republic of Croatia
+CUBA:ISO2=CU:ISO3=CUB:name=The Republic of Cuba
+CURAÇAO:ISO2=CW:ISO3=CUW:name=The Country of Curaçao
+CYPRUS:ISO2=CY:ISO3=CYP:name=The Republic of Cyprus
+CZECH REPUBLIC:ISO2=CZ:ISO3=CZE:name=The Czech Republic
+CZECHIA:ISO2=CZ:ISO3=CZE:name=The Czech Republic
+DENMARK:ISO2=DK:ISO3=DNK:name=The Kingdom of Denmark
+DJIBOUTI:ISO2=DJ:ISO3=DJI:name=The Republic of Djibouti
+DOMINICA:ISO2=DM:ISO3=DMA:name=The Commonwealth of Dominica
+DOMINICAN REPUBLIC:ISO2=DO:ISO3=DOM:name=The Dominican Republic
+EAST TIMOR:ISO2=TL:ISO3=TLS:name=The Democratic Republic of Timor-Leste
+ECUADOR:ISO2=EC:ISO3=ECU:name=The Republic of Ecuador
+EGYPT:ISO2=EG:ISO3=EGY:name=The Arab Republic of Egypt
+EL SALVADOR:ISO2=SV:ISO3=SLV:name=The Republic of El Salvador
+EMIRATES:ISO2=AE:ISO3=ARE:name=The United Arab Emirates
+ENGLAND:ISO2=GB:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+EQUATORIAL GUINEA:ISO2=GQ:ISO3=GNQ:name=The Republic of Equatorial Guinea
+ERITREA:ISO2=ER:ISO3=ERI:name=The State of Eritrea
+ESTONIA:ISO2=EE:ISO3=EST:name=The Republic of Estonia
+ESWATINI:ISO2=SZ:ISO3=SWZ:name=The Kingdom of Eswatini
+ETHIOPIA:ISO2=ET:ISO3=ETH:name=The Federal Democratic Republic of Ethiopia
+FALKLAND ISLANDS=ISO2=FK:ISO3=FLK:name=The Falkland Islands
+FAROE ISLANDS:ISO2=FO:ISO3=FRO:name=The Faroe Islands
+FEDERATED STATES OF MICRONESIA:ISO2=FM:ISO3=FSM:name=The Federated States of Micronesia
+FIJI:ISO2=FJ:ISO3=FJI:name=The Republic of Fiji
+FINLAND:ISO2=FI:ISO3=FIN:name=The Republic of Finland
+FRANCE:ISO2=FR:ISO3=FRA:name=The French Republic
+FRENCH GUIANA:ISO2=GF:ISO3=GUF:name=Guyane
+FRENCH POLYNESIA:ISO2=PF:ISO3=PYF:name=French Polynesia
+FRENCH SOUTHERN AND ANTARCTIC LANDS:ISO2=TF:ISO3=ATF:name=The French Southern and Antarctic Lands
+FRENCH SOUTHERN TERRITORIES:ISO2=TF:ISO3=ATF:name=The French Southern and Antarctic Lands
+GABON:ISO2=GA:ISO3=GAB:name=The Gabonese Republic
+GABONESE REPUBLIC:ISO2=GA:ISO3=GAB:name=The Gabonese Republic
+GAMBIA:ISO2=GM:ISO3=GMB:name=The Republic of The Gambia
+GEORGIA:ISO2=GE:ISO3=GEO:name=Georgia
+GERMANY:ISO2=DE:ISO3=DEU:name=The Federal Republic of Germany
+GHANA:ISO2=GH:ISO3=GHA:name=The Republic of Ghana
+GIBRALTAR:ISO2=GI:ISO3=GIB:name=Gibraltar
+GREAT BRITAIN:ISO2=GB:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+GREECE:ISO2=GR:ISO3=GRC:name=The Hellenic Republic
+GREENLAND:ISO2=GL:ISO3=GRL:name=Kalaallit Nunaat
+GRENADA:ISO2=GD:ISO3=GRD:name=Grenada
+GUADELOUPE:ISO2=GP:ISO3=GLP:name=Guadeloupe
+GUAM:ISO2=GU:ISO3=GUM:name=The Territory of Guam
+GUATEMALA:ISO2=GT:ISO3=GTM:name=The Republic of Guatemala
+GUERNSEY:ISO2=GG:ISO3=GGY:name=The Bailiwick of Guernsey
+GUINEA:ISO2=GN:ISO3=GIN:name=The Republic of Guinea
+GUINEA-BISSAU:ISO2=GW:ISO3=GNB:name=The Republic of Guinea-Bissau
+GUINEA BISSAU:ISO2=GW:ISO3=GNB:name=The Republic of Guinea-Bissau
+GUYANA:ISO2=GY:ISO3=GUY:name=The Co-operative Republic of Guyana
+GUYANE:ISO2=GF:ISO3=GUF:name=Guyane
+HAITI:ISO2=HT:ISO3=HTI:name=The Republic of Haiti
+HELLENIC REPUBLIC:ISO2=GR:ISO3=GRC:name=The Hellenic Republic
+HOLY SEE:ISO2=VA:ISO3=VAT:name=The Holy See
+HEARD ISLAND:ISO2=HM:ISO3=HMD:name=The Territory of Heard Island and McDonald Islands
+MCDONALD ISLANDS:ISO2=HM:ISO3=HMD:name=The Territory of Heard Island and McDonald Islands
+HEARD ISLAND AND MCDONALD ISLANDS:ISO2=HM:ISO3=HMD:name=The Territory of Heard Island and McDonald Islands
+HOLLAND:ISO2=NL:ISO3=NLD:name=The Kingdom of the Netherlands
+HONDURAS:ISO2=HN=ISO3=HND:name=The Republic of Honduras
+HONG KONG:ISO2=HK:ISO3=HKG:name=The Hong Kong Special Administrative Region of China
+HONGKONG:ISO2=HK:ISO3=HKG:name=The Hong Kong Special Administrative Region of China
+HUNGARY:ISO2=HU:ISO3=HUN:name=Hungary
+ICELAND:ISO2=IS:ISO3=ISL:name=Iceland
+INDIA:ISO2=IN:ISO3=IND:name=The Republic of India
+INDONESIA:ISO2=ID:ISO3=IDN:name=The Republic of Indonesia
+IRAN:ISO2=IR:ISO3=IRN:name=The Islamic Republic of Iran
+IRAQ:ISO2=IQ:ISO3=IRQ:name=The Republic of Iraq
+IRAK:ISO2=IQ:ISO3=IRQ:name=The Republic of Iraq
+IRELAND:ISO2=IE:ISO3=IRL:name=Ireland
+ISLE OF MAN:ISO2=IM:ISO3=IMN:name=The Isle of Man
+ISRAEL:ISO2=IL:ISO3=ISR:name=The State of Israel
+ITALY:ISO2=IT:ISO3=ITA:name=The Italian Republic
+IVORY COAST:ISO2=CI:ISO3=CIV:name=The Republic of Côte d'Ivoire
+JAMAICA:ISO2=JM:ISO3=JAM:name=Jamaica
+JAN MAYEN:ISO2=SJ:ISO3=SJM:name=Svalbard and Jan Mayen
+JAPAN:ISO2=JP:ISO3=JPN:name=Japan
+JERSEY:ISO2=JE:ISO3=JEY:name=The Bailiwick of Jersey
+JORDAN:ISO2=JO:ISO3=JOR:name=The Hashemite Kingdom of Jordan
+KALAALLIT NUNAAT:ISO2=GL:ISO3=GRL:name=Kalaallit Nunaat
+KAZAKHSTAN:ISO2=KZ:ISO3=KAZ:name=The Republic of Kazakhstan
+KAZAKSTAN:ISO2=KZ:ISO3=KAZ:name=The Republic of Kazakhstan
+KENYA:ISO2=KE:ISO3=KEN:name=The Republic of Kenya
+KIRIBATI:ISO2=KI:ISO3=KIR:name=The Republic of Kiribati
+KUWAIT:ISO2=KW:ISO3=KWT:name=The State of Kuwait
+KYRGYZSTAN:ISO2=KG:ISO3=KGZ:name=The Kyrgyz Republic
+KYRGYZ REPUBLIC:ISO2=KG:ISO3=KGZ:name=The Kyrgyz Republic
+KIRGHIZISTAN:ISO2=KG:ISO3=KGZ:name=The Kyrgyz Republic
+LAOS:ISO2=LA:ISO3=LAO:name=The Lao People's Democratic Republic
+LAO PEOPLE'S DEMOCRATIC REPUBLIC:ISO2=LA:ISO3=LAO:name=The Lao People's Democratic Republic
+LATVIA:ISO2=LV:ISO3=LVA:name=The Republic of Latvia
+LEBANON:ISO2=LB:ISO3=LBN:name=The Lebanese Republic
+LEBANESE REPUBLIC:ISO2=LB:ISO3=LBN:name=The Lebanese Republic
+LESOTHO:ISO2=LS:ISO3=LSO:name=The Kingdom of Lesotho
+LIBERIA:ISO2=LR:ISO3=LBR:name=The Republic of Liberia
+LIBYA:ISO2=LY:ISO3=LBY:name=Libya
+LIECHTENSTEIN:ISO2=LI:ISO3=LIE:name=The Principality of Liechtenstein
+LITHUANIA:ISO2=LT:ISO3=LTU:name=The Republic of Lithuania
+LUXEMBOURG:ISO2=LU:ISO3=LUX:name=The Grand Duchy of Luxembourg
+MACAO:ISO2=MO:ISO3=MAC:name=Macao Special Administrative Region of China
+MACAU:ISO2=MO:ISO3=MAC:name=Macao Special Administrative Region of China
+NORTH MACEDONIA:ISO2=MK:ISO3=MKD=Republic of North Macedonia
+FORMER YUGOSLAV REPUBLIC OF MACEDONIA:ISO2=MK:ISO3=MKD=Republic of North Macedonia
+MADAGASCAR:ISO2=MG:ISO3=MDG:name=The Republic of Madagascar
+MALAWI:ISO2=MW:ISO3=MWI:name=The Republic of Malawi
+MALAYSIA:ISO2=MY:ISO3=MYS:name=Malaysia
+MALDIVES:ISO2=MV:ISO3=MDV:name=The Republic of Maldives
+MALI:ISO2=ML:ISO3=MLI:name=The Republic of Mali
+MALTA:ISO2=MT:ISO3=MLT:name=The Republic of Malta
+MALVINAS=ISO2=FK:ISO3=FLK:name=The Falkland Islands
+MARSHALL ISLANDS:ISO2=MH:ISO3=MHL:name=The Republic of the Marshall Islands
+MARTINIQUE:ISO2=MQ:ISO3=MTQ:name=Martinique
+MAURITANIA:ISO2=MR:ISO3=MRT:name=The Islamic Republic of Mauritania
+MAURITIUS:ISO2=MU:ISO3=MUS:name=The Republic of Mauritius
+MAYOTTE:ISO2=YT:ISO3=MYT:name=The Department of Mayotte
+MEXICO:ISO2=MX:ISO3=MEX:name=The United Mexican States
+MICRONESIA:ISO2=FM:ISO3=FSM:name=The Federated States of Micronesia
+MOLDOVA:ISO2=MD:ISO3=MDA:name=The Republic of Moldova
+MONACO:ISO2=MC:ISO3=MCO:name=The Principality of Monaco
+MONGOLIA:ISO2=MN:ISO3=MNG:name=The State of Mongolia
+MONTENEGRO:ISO2=ME:ISO3=MNE:name=Montenegro
+MONTSERRAT:ISO2=MS:ISO3=MSR:name=Montserrat
+MOROCCO:ISO2=MA:ISO3=MAR:name=The Kingdom of Morocco
+MOZAMBIQUE:ISO2=MZ:ISO3=MOZ:name=The Republic of Mozambique
+MYANMAR:ISO2=MM:ISO3=MMR:name=The Republic of the Union of Myanmar
+NAMIBIA:ISO2=NA:ISO3=NAM:nam=The Republic of Namibia
+NAMIBIE:ISO2=NA:ISO3=NAM:nam=The Republic of Namibia
+NAURU:ISO2=NR:ISO3=NRU:name=The Republic of Nauru
+NEPAL:ISO2=NP:ISO3=NPL:name=The Federal Democratic Republic of Nepal
+NETHERLANDS:ISO2=NL:ISO3=NLD:name=The Kingdom of the Netherlands
+NEW CALEDONIA:ISO2=NC:ISO3=NCL:name=New Caledonia
+NEW ZEALAND:ISO2=NZ:ISO3=NZL:name=New Zealand
+NICARAGUA:ISO2=NI:ISO3=NIC:name=The Republic of Nicaragua
+NIGER:ISO2=NE:ISO3=NER:name=The Republic of Niger
+NIGERIA:ISO2=NG:ISO3=NGA:name=The Federal Republic of Nigeria
+NIUE:ISO2=NU:ISO3=NIU:name=Niue
+NORFOLK ISLAND:ISO2=NF:ISO3=NFK:name=The Territory of Norfolk Island
+NORTH KOREA:ISO2=KP:ISO3=PRK:name=The Democratic People's Republic of Korea
+N. KOREA:ISO2=KP:ISO3=PRK:name=The Democratic People's Republic of Korea
+N KOREA:ISO2=KP:ISO3=PRK:name=The Democratic People's Republic of Korea
+NORTHER IRELAND:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+NORTHERN NARIANA ISLANDS:ISO2=MP:ISO3=MNP:name=The Commonwealth of the Northern Mariana Islands
+NORWAY:ISO2=NO:ISO3=NOR:name=The Kingdom of Norway
+OMAN:ISO2=OM:ISO3=OMN:name=The Sultanate of Oman
+PAKISTAN:ISO2=PK:ISO3=PAK:name=The Islamic Republic of Pakistan
+PALAU:ISO2=PW:ISO3=PLW:name=The Republic of Palau
+PALESTINE:ISO2=PS:ISO3=PSE:name=The State of Palestine
+PANAMA:ISO2=PA:ISO3=PAN:name=The Republic of Panamá
+PANAMÁ:ISO2=PA:ISO3=PAN:name=The Republic of Panamá
+PAPUA NEW GUINEA:ISO2=PG:ISO3=PNG:name=The Independent State of Papua New Guinea
+PARAGUAY:ISO2=PY:ISO3=PRY:name=The Republic of Paraguay
+PERU:ISO2=PE:ISO3=PER:name=The Republic of Perú
+PERÚ:ISO2=PE:ISO3=PER:name=The Republic of Perú
+PHILIPPINES:ISO2=PH:ISO3=PHL:name=The Republic of the Philippines
+PITCAIRN:ISO2=PN:ISO3=PCN:name=The Pitcaird, Henderson, Ducie and Oeno Islands
+POLAND:ISO2=PL:ISO3=POL:name=The Republic of Poland
+PORTUGAL:ISO2=PT:ISO3=PRT:name=The Portuguese Republic
+PORTUGUESE REPUBLIC:ISO2=PT:ISO3=PRT:name=The Portuguese Republic
+PUERTO RICO:ISO2=PR:ISO3=PRI:name=The Commonwealth of Puerto Rico
+QATAR:ISO2=QA:ISO3=QAT:name=The State of Qatar
+REPUBLIC OF CHINA:ISO2=TW:ISO3=TWN:name=The Republic of China
+REPUBLIC OF KOREA:ISO2=KR:ISO3=KOR:name=The Republic of Korea
+RÉUNION:ISO2=RE:ISO3=REU:name=Réunion
+REUNION:ISO2=RE:ISO3=REU:name=Réunion
+ROMANIA:ISO2=RO:ISO3=ROU:name=Romania
+RUSSIA:ISO2=RU:ISO3=RUS:name=The Russian Federation
+RUSSIAN FEDERATION:ISO2=RU:ISO3=RUS:name=The Russian Federation
+RWANDA:ISO2=RW:ISO3=RWA:name=The Republic of Rwanda
+SAHRAWI ARAB DEMOCRATIC REPUBLIC:ISO2=EH:ISO3=ESH:name=The Sahrawi Arab Democratic Republic
+SAINT BARTHÉLEMY:ISO2=BL:ISO3=BLM:name=The Collectivity of Saint-Barthélemy
+SAINT BARTHELEMY:ISO2=BL:ISO3=BLM:name=The Collectivity of Saint-Barthélemy
+SAINT-BARTHÉLEMY:ISO2=BL:ISO3=BLM:name=The Collectivity of Saint-Barthélemy
+SAINT-BARTHELEMY:ISO2=BL:ISO3=BLM:name=The Collectivity of Saint-Barthélemy
+SAINT HELENA:ISO2=SH:ISO3=SHN:name=Saint Helena, Ascension and Tristan da Cunha
+ASCENSION ISLAND:ISO2=SH:ISO3=SHN:name=Saint Helena, Ascension and Tristan da Cunha
+TRISTAN DA CUNHA:ISO2=SH:ISO3=SHN:name=Saint Helena, Ascension and Tristan da Cunha
+SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA:ISO2=SH:ISO3=SHN:name=Saint Helena, Ascension and Tristan da Cunha
+SAINT KITTS AND NEVIS:ISO2=KN:ISO3=KNA:name=Saint Kitts and Nevis
+SAINT LUCIA:ISO2=LC:ISO3=LCA:name=Saint Lucia
+SAINT MARTIN:ISO2=MF:ISO3=MAF:name=The Collectivity of Saint-Martin
+SAINT-MARTIN:ISO2=MF:ISO3=MAF:name=The Collectivity of Saint-Martin
+SAINT PIERRE AND MIQUELON:ISO2=PM:ISO3=SPM:name=The Overseas Collectivity of Saint-Pierre and Miquelon
+SAINT-PIERRE AND MIQUELON:ISO2=PM:ISO3=SPM:name=The Overseas Collectivity of Saint-Pierre and Miquelon
+SAINT VINCENT AND THE GRENADINES:ISO2=VC:ISO3=VCT:name=Saint Vincent and the Grenadines
+SAINT VINCENT:ISO2=VC:ISO3=VCT:name=Saint Vincent and the Grenadines
+GRENADINES:ISO2=VC:ISO3=VCT:name=Saint Vincent and the Grenadines
+SAMOA:ISO2=WS:ISO3=WSM:name=The Independent State of Samoa
+SAN MARINO:ISO2=SM:ISO3=SMR:name=The Republic of San Marino
+SAO TOME AND PRINCIPE:ISO2=ST:ISO3=STP:name=The Democratic Republic of São Tomé and Príncipe
+SÃO TOMÉ AND PRINCIPE:ISO2=ST:ISO3=STP:name=The Democratic Republic of São Tomé and Príncipe
+SAUDI ARABIA:ISO2=SA:ISO3=SAU:name=The Kingdom of Saudia Arabia
+SCOTLAND:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+SENEGAL:ISO2=SN:ISO3=SEN:name=The Republic of Senegal
+SERBIA:ISO2=RS:ISO3=SRB:name=The Republic of Serbia
+SEYCHELLES:ISO2=SC:ISO3=SYC:name=The Republic of the Seychelles
+SIERRA LEONE:ISO2=SL:ISO3=SLE:name=The Republic of Sierra Leone
+SINGAPORE:ISO2=SG:ISO3=SGP:name=The Republic of Singapore
+SINT MAARTEN:ISO2=SX:ISO3=SXM:name=Sint Maarten
+SLOVAKIA:ISO2=SK:ISO3=SVK:name=The Slovak Republic
+SLOVAK REPUBLIC:ISO2=SK:ISO3=SVK:name=The Slovak Republic
+SLOVENIA:ISO2=SI:ISO3=SVN:name=The Republic of Slovenia
+SOLOMON ISLANDS:ISO2=SB:ISO3=SLB:name=The Solomon Islands
+SOMALIA:ISO2=SO:ISO3=SOM:name=The Federal Republic of Somalia
+SOUTH AFRICA:ISO2=ZA:ISO3=ZAF:name=The Republic of South Africa
+SOUTH GEORGIA:ISO2=GS:ISO3=SGS:name=South Georgia and the South Sandwich Islands
+SOUTH SANDWICH ISLANDS:ISO2=GS:ISO3=SGS:name=South Georgia and the South Sandwich Islands
+SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS:ISO2=GS:ISO3=SGS:name=South Georgia and the South Sandwich Islands
+SOUTH KOREA:ISO2=KR:ISO3=KOR:name=The Republic of Korea
+S. KOREA:ISO2=KR:ISO3=KOR:name=The Republic of Korea
+S KOREA:ISO2=KR:ISO3=KOR:name=The Republic of Korea
+SOUTH SUDAN:ISO2=SS:ISO3=SSD:name=The Republic of South Sudan
+SPAIN:ISO2=ES:ISO3=ESP:name=The Kingdom of Spain
+SRI LANKA:ISO2=LK:ISO3=LKA:name=The Democratic Socialist Republic of Sri Lanka
+SRILANKA:ISO2=LK:ISO3=LKA:name=The Democratic Socialist Republic of Sri Lanka
+SUDAN:ISO2=SD:ISO3=SDN:name=The Republic of Sudan
+SURINAM:ISO2=SR:ISO3=SUR:name=The Republic of Suriname
+SURINAME:ISO2=SR:ISO3=SUR:name=The Republic of Suriname
+SVALBARD:ISO2=SJ:ISO3=SJM:name=Svalbard and Jan Mayen
+SVALBARD AND JAN MAYEN:ISO2=SJ:ISO3=SJM:name=Svalbard and Jan Mayen
+SWAZILAND:ISO2=SZ:ISO3=SWZ:name=The Kingdom of Eswatini
+SWEDEN:ISO2=SE:ISO3=SWE:name=The Kingdom of Sweden
+SWITZERLAND:ISO2=CH:ISO3=CHE:name=The Swiss Confederation
+SWISS CONFEDERATION:ISO2=CH:ISO3=CHE:name=The Swiss Confederation
+SYRIA:ISO2=SY:ISO3=SYR:name=The Syrian Arab Republic
+SYRIAN ARAB REPUBLIC:ISO2=SY:ISO3=SYR:name=The Syrian Arab Republic
+TAIWAN:ISO2=TW:ISO3=TWN:name=The Republic of China
+TAJIKISTAN:ISO2=TJ:ISO3=TJK:name=The Republic of Tajikistan
+TANZANIA:ISO2=TZ:ISO3=TZA:name=The United Republic of Tanzania
+THAILAND:ISO2=TH:ISO3=THA:name=The Kingdom of Thailand
+TIMOR-LESTE:ISO2=TL:ISO3=TLS:name=The Democratic Republic of Timor-Leste
+TIMOR LESTE:ISO2=TL:ISO3=TLS:name=The Democratic Republic of Timor-Leste
+TOGO:ISO2=TG:ISO3=TGO:name=The Togolese Republic
+TOGOLESE REPUBLIC:ISO2=TG:ISO3=TGO:name=The Togolese Republic
+TOKELAU:ISO2=TK:ISO3=TKL:name=Tokelau
+TONGA:ISO2=TO:ISO3=TON:name=The Kingdom of Tonga
+TRINIDAD:ISO2=TT:ISO3=TTO:name=The Republic of Trinidad and Tobago
+TOBAGO:ISO2=TT:ISO3=TTO:name=The Republic of Trinidad and Tobago
+TRINIDAD AND TOBAGO:ISO2=TT:ISO3=TTO:name=The Republic of Trinidad and Tobago
+TUNISIA:ISO2=TN:ISO3=TUN:name=The Republic of Tunisia
+TURKEY:ISO2=TR:ISO3=TUR:name=The Republic of Turkey
+TURKMENISTAN:ISO2=TM:ISO3=TKM:name=Turkmenistan
+TURKS AND CAICOS ISLANDS:ISO2=TC:ISO3=TCA:name=The Turks and Caicos Islands
+TURKS AND CAICOS:ISO2=TC:ISO3=TCA:name=The Turks and Caicos Islands
+TUVALU:ISO2=TV:ISO3=TUV:name=Tuvalu
+UGANDA:ISO2=UG:ISO3=UGA:name=The Republic of Uganda
+UKRAINE:ISO2=UA:ISO3=UKR:name=Ukraine
+UNITED ARAB EMIRATES:ISO2=AE:ISO3=ARE:name=The United Arab Emirates
+UAE:ISO2=AE:ISO3=ARE:name=The United Arab Emirates
+U.A.E.:ISO2=AE:ISO3=ARE:name=The United Arab Emirates
+UK:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+U K:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+U.K.:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+UNITED KINGDOM:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+UNITED STATES OF AMERICA:ISO2=US:ISO3=USA:name=The United States of America
+UNITED STATES:ISO2=US:ISO3=USA:name=The United States of America
+US:ISO2=US:ISO3=USA:name=The United States of America
+USA:ISO2=US:ISO3=USA:name=The United States of America
+U S:ISO2=US:ISO3=USA:name=The United States of America
+U.S.:ISO2=US:ISO3=USA:name=The United States of America
+U S A:ISO2=US:ISO3=USA:name=The United States of America
+U.S.A.:ISO2=US:ISO3=USA:name=The United States of America
+UNITED STATES VIRGIN ISLANDS:ISO2=VG:ISO3=VGB:name=The Virgin Islands
+US VIRGIN ISLANDS:ISO2=VG:ISO3=VGB:name=The Virgin Islands
+URUGUAY:ISO2=UY:ISO3=URY:name=The Oriental Republic of Uruguay
+UZBEKISTAN:ISO2=UZ:ISO3=UZB:name=The Republic of Uzbekistan
+VANUATU:ISO2=VU:ISO3=VUT:name=The Republic of Vanuatu
+VATICAN:ISO2=VA:ISO3=VAT:name=The Holy See
+VATICAN CITY:ISO2=VA:ISO3=VAT:name=The Holy See
+VENEZUELA:ISO2=VE:ISO3=VEN:name=The Bolivarian Republic of Venezuela
+VIETNAM:ISO2=VN:ISO3=VNM:name=The Socialist Republic of Viet Nam
+VIET NAM:ISO2=VN:ISO3=VNM:name=The Socialist Republic of Viet Nam
+VIRGIN ISLANDS:ISO2=VG:ISO3=VGB:name=The Virgin Islands
+WALES:ISO2=UK:ISO3=GBR:name=The United Kingdom of Great Britain and Northern Ireland
+WALLIS & FUTUNA:ISO2=WF:ISO3=WLF:name=The Territory of the Wallis and Futuna Islands
+WALLIS AND FUTUNA:ISO2=WF:ISO3=WLF:name=The Territory of the Wallis and Futuna Islands
+WESTERN SAHARA:ISO2=EH:ISO3=ESH:name=The Sahrawi Arab Democratic Republic
+YEMEN:ISO2=YE:ISO3=YEM:name=The Republic of Yemen
+ZAMBIA:ISO2=ZM:ISO3=ZMB:name=The Republic of Zambia
+ZIMBABWE:ISO2=ZW:ISO3=ZWE:name=The Republic of Zimbabwe
