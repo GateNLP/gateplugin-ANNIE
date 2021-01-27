@@ -15,6 +15,8 @@
  */
 package gate.creole.gazetteer;
 
+import gate.creole.ResourceReference;
+
 /**OntoGazetteer
  * <br>
  * A gazetter that exploits a linear gazetter to generate annotations
@@ -39,10 +41,10 @@ public interface OntoGazetteer extends Gazetteer {
 
   /**Sets the url of the mapping definition
    * @param url the url of the mapping definition  */
-  public void setMappingURL(java.net.URL url) ;
+  public void setMappingURL(ResourceReference url) ;
 
   /**Gets the url of the mapping definition
    * @return the url of the mapping definition  */
-  public java.net.URL getMappingURL() ;
+  public ResourceReference getMappingURL() ;
 
 } // interface OntoGazetteer

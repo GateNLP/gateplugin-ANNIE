@@ -15,6 +15,8 @@
  */
 package gate.creole.gazetteer;
 
+import gate.creole.ResourceReference;
+
 /**AbstratOntoGazetteer
  * This class implements the methods common for all ontology-aware gazetteers.*/
 public abstract class AbstractOntoGazetteer
@@ -23,7 +25,7 @@ extends AbstractGazetteer implements OntoGazetteer {
   private static final long serialVersionUID = 4883216941890639412L;
 
   /** the url of the mapping definition */
-  protected java.net.URL mappingURL;
+  protected ResourceReference mappingURL;
 
   /** class name of the linear gazetteer to be called */
   protected String gazetteerName;
@@ -54,7 +56,7 @@ extends AbstractGazetteer implements OntoGazetteer {
    * @param url the URL of the mapping definition
    */
   @Override
-  public void setMappingURL(java.net.URL url) {
+  public void setMappingURL(ResourceReference url) {
     mappingURL = url;
   }
 
@@ -63,7 +65,7 @@ extends AbstractGazetteer implements OntoGazetteer {
    * @return the URL of the mapping definition
    */
   @Override
-  public java.net.URL getMappingURL() {
+  public ResourceReference getMappingURL() {
     return mappingURL;
   }
 
