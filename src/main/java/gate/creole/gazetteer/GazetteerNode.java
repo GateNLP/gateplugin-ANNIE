@@ -118,10 +118,15 @@ public class GazetteerNode {
 
     int substr_begin = 0;
     int substr_end = features.indexOf(separator,substr_begin);
-    while (substr_end != -1) {   
-      tempPairs.add(features.substring(substr_begin,substr_end));
+    while (substr_end != -1) {
+      // if the "pair" is just an empty string, just ignore it.
+      // See https://github.com/GateNLP/gateplugin-ANNIE/issues/12      
+      if(substr_end-substr_begin>0) {
+        tempPairs.add(features.substring(substr_begin,substr_end));
+      }
       substr_begin = substr_end + 1;
       substr_end = features.indexOf(separator,substr_begin); 
+      
     }
     
     String lastPair = features.substring(substr_begin);
@@ -139,14 +144,15 @@ public class GazetteerNode {
     // extract the name and value from the pair strings and put in feature map
     Map<String,Object> featureMap;
     if (isOrdered) {
-      featureMap = new LinkedHashMap<String,Object>(pairs.length);
+      featureMap = new LinkedHashMap<>(pairs.length);
     } else {
-      featureMap = new HashMap<String,Object>(pairs.length);
+      featureMap = new HashMap<>(pairs.length);
     }
     for(int i = 0; i < pairs.length; i++) {
       String pair = pairs[i];
       int sep = pair.indexOf('=');
       if(sep == -1) {
+        System.err.println("Odd pair: >"+pair+"<");
         throw new GateRuntimeException("Correct format for gazetteer entry" +
           " features is: [entry]([separator][featureName]=[featureValue])*");
       } else {
