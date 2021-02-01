@@ -31,7 +31,9 @@ public class EqualPredicate extends AbstractConstraintPredicate {
   public boolean doMatch(Object annotValue, AnnotationSet context)
           throws JapeException {
 
-    if(value == null && annotValue != null) return false;
+    if (value == null && annotValue == null) return true;  
+
+    if(value == null || annotValue == null) return false;
 
     if(value.equals(annotValue)) return true;
 
