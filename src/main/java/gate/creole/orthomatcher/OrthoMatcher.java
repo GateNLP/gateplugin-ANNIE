@@ -546,14 +546,15 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
     } //while though unknowns
 
     if (! annots2Remove.isEmpty()) {
-      Iterator<Integer> unknownIter = annots2Remove.keySet().iterator();
-      while (unknownIter.hasNext()) {
-        Integer unknId = unknownIter.next();
+      //Iterator<Integer> unknownIter = annots2Remove.keySet().iterator();
+      //while (unknownIter.hasNext()) {
+      for (Map.Entry<Integer, String> entry : annots2Remove.entrySet()) {
+        Integer unknId = entry.getKey();
         Annotation unknown = nameAllAnnots.get(unknId);
         Integer newID = nameAllAnnots.add(
                 unknown.getStartNode(),
                 unknown.getEndNode(),
-                annots2Remove.get(unknId),
+                entry.getValue(),
                 unknown.getFeatures()
         );
         nameAllAnnots.remove(unknown);

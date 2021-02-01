@@ -702,11 +702,12 @@ public class FSM implements JapeConstants {
    */
   String encodeForGraphViz (Map<String,String> m) {
     ArrayList<String> temp = new ArrayList<String>(m.size());
-    for(String k : m.keySet()) {
-      String v = m.get(k);
+    //for(String k : m.keySet()) {
+    for (Map.Entry<String, String> entry : m.entrySet()) {
+      String v = entry.getValue();
       v = v.replaceAll("\r\n", "\\\\l");
       v = v.replaceAll("\"", "\\\\\"");
-      temp.add(k + "=\"" + v + "\"");
+      temp.add(entry.getKey() + "=\"" + v + "\"");
     }
 
     StringBuffer toReturn = new StringBuffer();

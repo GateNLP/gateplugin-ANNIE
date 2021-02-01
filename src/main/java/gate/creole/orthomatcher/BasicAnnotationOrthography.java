@@ -200,11 +200,10 @@ public class BasicAnnotationOrthography implements AnnotationOrthography {
     // which is indexed on string rather than testing every id. Need to have the
     // index be String + Type
     // for safety
-    Iterator<Integer> iter = processedAnnots.keySet().iterator();
     // System.out.println("ID's examined: ");
-    while(iter.hasNext()) {
-      id = iter.next();
-      String oldString = processedAnnots.get(id);
+    for (Map.Entry<Integer,String> entry : processedAnnots.entrySet()) {
+      id = entry.getKey();
+      String oldString = entry.getValue();
       // System.out.print(id + " ");
       if(annotString.equals(oldString)) {
         Annotation tempAnnot = nameAllAnnots.get(id);

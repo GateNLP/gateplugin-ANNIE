@@ -81,11 +81,9 @@ public class LeftHandSide implements JapeConstants, Serializable
       "); bindingTable(" + newline + pad
     );
 
-    for(Iterator<String> i = bindingTable.keySet().iterator(); i.hasNext(); ) {
-      String bName = i.next();
-      ComplexPatternElement cpe = (bindingTable.get(bName));
+    for (Map.Entry<String, ComplexPatternElement> entry : bindingTable.entrySet()) {
       buf.append(
-        pad + "bT.bn(" + bName + "), cpe.bn(" + cpe.getBindingName() + ")"
+        pad + "bT.bn(" + entry.getKey() + "), cpe.bn(" + entry.getValue().getBindingName() + ")"
       );
     }
 

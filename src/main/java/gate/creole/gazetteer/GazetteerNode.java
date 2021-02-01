@@ -180,8 +180,8 @@ public class GazetteerNode {
   public String featureMapToString(Map<String,Object> featureMap) {
     StringBuffer str = new StringBuffer();
     if (featureMap instanceof LinkedHashMap) {
-      for (Object key : featureMap.keySet()) {
-        str.append(separator).append(key).append("=").append(featureMap.get(key));
+      for (Map.Entry<String,Object> entry : featureMap.entrySet()) {
+        str.append(separator).append(entry.getKey()).append("=").append(entry.getValue());
       }
     } else {
       // sort into a predictable order

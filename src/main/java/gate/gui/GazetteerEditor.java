@@ -1051,9 +1051,10 @@ public class GazetteerEditor extends AbstractVisualResource
         boolean match = false;
         Map<String,Object> map = node.getFeatureMap();
         if (map != null && !onlyValueCheckBox.isSelected()) {
-          for (String key : map.keySet()) {
-            if (pattern.matcher(key).find()
-             || pattern.matcher((String) map.get(key)).find()) { 
+          //for (String key : map.keySet()) {
+          for (Map.Entry<String, Object> entry : map.entrySet()) {
+            if (pattern.matcher(entry.getKey()).find()
+             || pattern.matcher((String) entry.getValue()).find()) { 
               match = true;
               break;
             }

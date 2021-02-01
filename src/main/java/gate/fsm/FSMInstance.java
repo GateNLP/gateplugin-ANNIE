@@ -228,11 +228,12 @@ public class FSMInstance implements Comparable<FSMInstance>, Cloneable, Serializ
         ioe.printStackTrace(Err.getPrintWriter());
       }
 
-      Iterator<String> labelIter = bindings.keySet().iterator();
+      //Iterator<String> labelIter = bindings.keySet().iterator();
       res += "\n{";
-      while(labelIter.hasNext()){
-        String label = labelIter.next();
-        Collection<Annotation> annots = bindings.get(label);
+      //while(labelIter.hasNext()){
+      for (Map.Entry<String, AnnotationSet> entry : bindings.entrySet()) {
+        String label = entry.getKey();
+        Collection<Annotation> annots = entry.getValue();
         res += "\n" + label + ": ";
         Iterator<Annotation> annIter = annots.iterator();
         while(annIter.hasNext()){
