@@ -21,7 +21,7 @@ public class MatchRule2 implements OrthoMatcherRule {
 	  boolean result=false;
 	  
 	    if (orthomatcher.alias.containsKey(s1) && orthomatcher.alias.containsKey(s2)) {
-	      if (orthomatcher.alias.get(s1).toString().equals(orthomatcher.alias.get(s2).toString())) {
+	      if (orthomatcher.alias.get(s1).equals(orthomatcher.alias.get(s2))) {
 	        if (OrthoMatcher.log.isDebugEnabled()) {
 	          OrthoMatcher.log.debug("rule 2 matched " + s1 + " to " + s2);
 	        }

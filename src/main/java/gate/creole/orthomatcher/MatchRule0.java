@@ -23,7 +23,7 @@ public class MatchRule0 implements OrthoMatcherRule {
 	      if (orthomatcher.spur_match.containsKey(string1)
 	            && orthomatcher.spur_match.containsKey(string2) )
 	      result=
-	      orthomatcher.spur_match.get(string1).toString().equals(orthomatcher.spur_match.get(string2).toString());
+	      orthomatcher.spur_match.get(string1).equals(orthomatcher.spur_match.get(string2));
 
 	      if (result) OrthoMatcherHelper.usedRule(0);
 	      
