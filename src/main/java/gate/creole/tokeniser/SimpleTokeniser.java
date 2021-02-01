@@ -22,7 +22,6 @@ import java.lang.reflect.Modifier;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.AbstractSet;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -645,8 +644,7 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
       
 //      Out.println(
 //      currentChar + typesMnemonics[Character.getType(currentChar)+128]);
-      nextState = graphPosition.next(typeIds.get(
-                  new Integer(Character.getType(currentChar))).intValue());
+      nextState = graphPosition.next(typeIds.get(Character.getType(currentChar)));
 
       if( null != nextState ) {
         graphPosition = nextState;
@@ -668,8 +666,8 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
                          Integer.toString(tokenString.length()));
 
           try {
-            annotationSet.add(new Long(tokenStart),
-                              new Long(charIdx),
+            annotationSet.add(Long.valueOf(tokenStart),
+                              Long.valueOf(charIdx),
                               "DEFAULT_TOKEN", newTokenFm);
           } catch (InvalidOffsetException ioe) {
             //This REALLY shouldn't happen!
@@ -899,10 +897,9 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
         currentField = staticFieldsIter.next();
         if(currentField.getType().toString().equals("byte")){
           fieldName = currentField.getName();
-          tempTypeIds.put(new Integer(currentField.getInt(null)),
-                                    new Integer(currentId));
+          tempTypeIds.put(currentField.getInt(null), currentId);
           mnemonics[currentId]= fieldName;
-          tempStringTypeIds.put(fieldName, new Integer(currentId));
+          tempStringTypeIds.put(fieldName, currentId);
           currentId++;
         }
       }
