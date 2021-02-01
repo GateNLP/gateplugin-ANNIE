@@ -43,6 +43,7 @@ public class InvalidFormatException extends GateException{
    */
   public InvalidFormatException(String file,String comment) {
     super(MSG+file+"\n"+(null==comment ? "" : comment));
+    this.file = file;
   }
 
 
@@ -53,6 +54,7 @@ public class InvalidFormatException extends GateException{
    */
   public InvalidFormatException(URL url,String comment) {
     super(MSG+url.toString()+"\n"+(null==comment ? "" : comment));
+    this.url = url;
   }
 
   public InvalidFormatException() {
