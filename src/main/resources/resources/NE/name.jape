@@ -31,12 +31,12 @@ Macro: TITLE
 
 
 
-
 Macro: FIRSTNAME
 
  ({FirstPerson.gender == male, FirstPerson.kind != ambig} |
-  {FirstPerson.gender == female, FirstPerson.kind != ambig})
-
+  {FirstPerson.gender == female, FirstPerson.kind != ambig}|
+  {FirstPerson.gender == unknown, FirstPerson.kind != ambig}
+  )
 
 Macro: FIRSTNAMEAMBIG
 (
@@ -434,14 +434,15 @@ features);
 Rule: PersonJobTitle
 Priority: 20
 // note we include titles but not jobtitles in markup
+// note, this kind of person might also have more than one first name
 
 (
  {Lookup.majorType == jobtitle}
 ):jobtitle
 (
  (TITLE)?
- ((FIRSTNAME | FIRSTNAMEAMBIG )
- )
+ (FIRSTNAME | FIRSTNAMEAMBIG )
+ (FIRSTNAME | FIRSTNAMEAMBIG )?
  (PREFIX)* 
  ({Upper,!Initials})
  (PERSONENDING)?
@@ -450,7 +451,6 @@ Priority: 20
 -->
     :person.TempPerson = {kind = "fullName", rule = "PersonJobTitle"},
    :jobtitle.JobTitle = {rule = "PersonJobTitle"} 
-
 
 
 
@@ -745,13 +745,13 @@ features);
 
 }
 
-
 Rule: 	PersonMiddleInitial
 Priority: 10
 // Fred C. Jones
 
 
 (
+(TITLE)?
  
   (FIRSTNAME | FIRSTNAMEAMBIG ):firstName
   ({Initials}):initials
@@ -794,11 +794,59 @@ features);
 
 }
 
+Rule: PersonFullHyphenated
+Priority: 60
+// this takes precedence over PersonFullStop, ie if the "date" is part of a hyphenated name,
+// it's a name, not a date
+
+
+(
+ (FIRSTNAME | FIRSTNAMEAMBIG):firstName
+ (PREFIX)* 
+ ({Upper.rule == "UpperHyphenated"}):surname
+ ):person
+ -->
+ 
+ {
+ gate.FeatureMap features = Factory.newFeatureMap();
+ gate.AnnotationSet personSet = (gate.AnnotationSet)bindings.get("person");
+ gate.Annotation personAnn = (gate.Annotation)personSet.iterator().next();
+  
+  gate.AnnotationSet firstNameSet = (gate.AnnotationSet)bindings.get("firstName");
+  gate.Annotation firstNameAnn = (gate.Annotation)firstNameSet.iterator().next();
+ 
+ String firstNameContent = gate.Utils.stringFor(doc, firstNameAnn);
+ features.put("firstName", firstNameContent);
+ features.put("gender", firstNameAnn.getFeatures().get("gender"));
+
+ gate.AnnotationSet middleNameSet = (gate.AnnotationSet)bindings.get("middleName");
+
+ if (middleNameSet != null && middleNameSet.size()>0)
+{
+ gate.Annotation middleNameAnn = (gate.Annotation)middleNameSet.iterator().next();
+ String middleNameContent = gate.Utils.stringFor(doc, middleNameAnn);
+ features.put("middleName", middleNameContent);
+}
+
+ gate.AnnotationSet surnameSet = (gate.AnnotationSet)bindings.get("surname");
+ gate.Annotation surnameAnn = (gate.Annotation)surnameSet.iterator().next();
+
+ String surnameContent = gate.Utils.stringFor(doc, surnameAnn);
+ features.put("surname", surnameContent);
+
+ features.put("kind", "fullName");
+ features.put("rule", "PersonFullHyphenated");
+outputAS.add(personSet.firstNode(), personSet.lastNode(), "TempPerson",
+features);
+
+}
+
 
 
 Rule: PersonFullStop
 Priority: 50
 // G.Wilson Fri
+//note that this shouldn't fire when the "date" is hyphenated, e.g. Jon Wilson-Jan
 
 (
  ((FIRSTNAME | FIRSTNAMEAMBIG) )
@@ -1001,7 +1049,7 @@ features);
 
 
 Rule:	GazOrganization
-Priority: 145
+Priority: 600
 (
 {Lookup.majorType == organization}
 )
@@ -1217,7 +1265,7 @@ Priority: 125
 )
 :org
 -->
-:org.TempOrganization = {orgType = "unknown", rule = "OrgXKey"}
+:org.TempOrganization = {orgType = :org.Lookup.orgType, rule = "OrgXKey"}
 
 
 Rule: NotOrgXEnding

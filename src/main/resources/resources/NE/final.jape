@@ -138,7 +138,7 @@ Priority: 100
 // later we might change this to any facility, rather than just airports
 
 (
- {TempPerson}
+ ({TempPerson}):person
  ({Token.string == "airport"} |
   {Token.string == "Airport"})
 )
@@ -147,16 +147,15 @@ Priority: 100
  {
 //removes TempLoc annotation, gets the rule feature and adds a new Loc annotation
 gate.AnnotationSet locSet = (gate.AnnotationSet)bindings.get("loc");
-gate.Annotation locAnn = (gate.Annotation)locSet.iterator().next();
+gate.AnnotationSet personSet = (gate.AnnotationSet)bindings.get("person");
 gate.FeatureMap features = Factory.newFeatureMap();
-features.putAll(locAnn.getFeatures());
 features.put("ruleFinal", "PersonLocFinal");
 features.put("locType", "airport");
 outputAS.add(locSet.firstNode(), locSet.lastNode(), "Location",
 features);
 outputAS.removeAll(locSet);
+outputAS.removeAll(personSet);
 }
-
 
  
 Rule: LocFinal

@@ -14,7 +14,7 @@
 */
 
 Phase:	FirstName
-Input: Token Lookup ClosedClass NumberLetter UserID
+Input: Token Lookup ClosedClass NumberLetter UserID Split
 Options: control = appelt
 
 
@@ -116,6 +116,7 @@ while(!ambig && lookupsIter.hasNext()){
   }
 }
 if(!ambig) features.put("gender", gender);
+else features.put("gender", "unknown");
 
 features.put("rule", "FirstName");
 features.put("twittername", "no");
@@ -166,6 +167,7 @@ features);
 Rule: TitleGender
 Priority: 50
 // Mr
+//guess the gender from the person's title
 
 (
  ({Lookup.majorType == title, Lookup.minorType == male}|

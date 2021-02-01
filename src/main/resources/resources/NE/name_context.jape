@@ -14,7 +14,7 @@
 */
 
 Phase:	NameContext
-Input: Lookup Unknown Person Token Organization Title
+Input: Lookup Unknown Person Token Organization Title Split
 Options: control = appelt
 
 //Rule: Jobtitle1
