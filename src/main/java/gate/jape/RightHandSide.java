@@ -120,9 +120,7 @@ public class RightHandSide implements JapeConstants, java.io.Serializable
     this.lhs = lhs;
     this.phaseName = transducerName;
     this.ruleName = ruleName;
-    actionClassName = new String(
-      transducerName + ruleName + "ActionClass" + actionClassNumber.getAndIncrement()
-    );
+    actionClassName = transducerName + ruleName + "ActionClass" + actionClassNumber.getAndIncrement();
     blockNames = new HashSet<String>();
     actionClassString = new StringBuffer(
       "// " + actionClassName + nl +
