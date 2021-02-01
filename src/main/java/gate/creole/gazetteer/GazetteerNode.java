@@ -178,10 +178,10 @@ public class GazetteerNode {
    * @return string of name/value pairs
    */
   public String featureMapToString(Map<String,Object> featureMap) {
-    String str = "";
+    StringBuffer str = new StringBuffer();
     if (featureMap instanceof LinkedHashMap) {
       for (Object key : featureMap.keySet()) {
-        str += separator + key + "=" + featureMap.get(key);
+        str.append(separator).append(key).append("=").append(featureMap.get(key));
       }
     } else {
       // sort into a predictable order
@@ -189,10 +189,10 @@ public class GazetteerNode {
       Collections.sort(sortedKeys);
       for(Iterator<String> it = sortedKeys.iterator(); it.hasNext();) {
         String key = it.next();
-        str += separator + key + "=" + featureMap.get(key).toString();
+        str.append(separator).append(key).append("=").append(featureMap.get(key).toString());
       }
     }
-    return str;
+    return str.toString();
   }
 
   

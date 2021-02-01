@@ -90,7 +90,7 @@ public class FSMState implements Serializable {
 */
 // DAM, TransArray optimization
   public String getEdgesGML() {
-    String res = "";
+    StringBuffer res = new StringBuffer();
     char currentChar;
     FSMState nextState;
 
@@ -98,12 +98,12 @@ public class FSMState implements Serializable {
     {
       currentChar = transitionFunction.itemsKeys[i];
       nextState = next(currentChar);
-      res += "edge [ source " + myIndex +
-      " target " + nextState.getIndex() +
-      " label \"'" + currentChar + "'\" ]\n";
+      res.append("edge [ source ").append(myIndex)
+      .append(" target ").append(nextState.getIndex())
+      .append(" label \"'").append(currentChar).append("'\" ]\n");
     }
 // >>> DAM, end
-    return res;
+    return res.toString();
   }
 
   /** Checks whether this state is a final one

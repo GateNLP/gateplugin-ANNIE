@@ -18,6 +18,8 @@ package gate.fsm;
 
 import java.util.*;
 
+import org.apache.commons.lang3.StringUtils;
+
 import gate.jape.*;
 import gate.util.Benchmark;
 import gate.util.SimpleArraySet;
@@ -753,12 +755,12 @@ public class FSM implements JapeConstants {
     */
   @Override
   public String toString(){
-    String res = "Starting from:" + initialState.getIndex() + "\n";
+    StringBuffer res = new StringBuffer("Starting from:").append(initialState.getIndex()).append("\n");
     Iterator<State> stateIter = allStates.iterator();
     while (stateIter.hasNext()){
-      res += "\n\n" + stateIter.next();
+      res.append("\n\n").append(stateIter.next());
     }
-    return res;
+    return res.toString();
   } // toString
 
   /**
@@ -785,10 +787,8 @@ public class FSM implements JapeConstants {
   private String currentBinding(ComplexPatternElement cpe, int indent) {
     if (indent == 0)
       bpeId = 0;
-    String ind = "";
-    for (int i = 0; i < indent; i++) {
-      ind += "   ";
-    }
+
+    String ind = StringUtils.repeat(' ', indent);
     String binds = ind + "(\n";
     PatternElement[][] pe = cpe.getConstraintGroup().
         getPatternElementDisjunction();
