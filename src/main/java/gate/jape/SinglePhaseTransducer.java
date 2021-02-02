@@ -16,6 +16,24 @@
 
 package gate.jape;
 
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import gate.Annotation;
 import gate.AnnotationSet;
 import gate.Controller;
@@ -40,23 +58,6 @@ import gate.util.GateRuntimeException;
 import gate.util.SimpleSortedSet;
 import gate.util.Strings;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.Vector;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import org.apache.log4j.Logger;
-
 /**
  * Represents a complete CPSL grammar, with a phase name, options and
  * rule set (accessible by name and by sequence). Implements a transduce
@@ -67,7 +68,7 @@ public class SinglePhaseTransducer extends Transducer implements JapeConstants,
 
   private static final long serialVersionUID = -2749474684496896114L;
 
-  protected static final Logger log = Logger
+  protected static final Logger log = LoggerFactory
           .getLogger(SinglePhaseTransducer.class);
 
   private static AtomicInteger actionClassNumber = new AtomicInteger();
@@ -773,7 +774,7 @@ public class SinglePhaseTransducer extends Transducer implements JapeConstants,
                   }
                 }
                 if (log.isInfoEnabled()) {
-                  log.info(rivalAcceptor);
+                  log.info(rivalAcceptor.toString());
                   log.info("bindings : " + rivalAcceptor.getBindings());
                 }
               }// DEBUG

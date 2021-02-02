@@ -18,14 +18,14 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import gate.Annotation;
 import gate.AnnotationSet;
 import gate.Document;
 import gate.Factory;
 import gate.FeatureMap;
-import gate.creole.ANNIEConstants;
 import gate.creole.ExecutionException;
 import gate.util.BomStrippingInputStreamReader;
 import gate.util.Err;
@@ -61,7 +61,7 @@ public class BasicAnnotationOrthography implements AnnotationOrthography {
     }
   }
 
-  protected static final Logger log = Logger
+  protected static final Logger log = LoggerFactory
       .getLogger(BasicAnnotationOrthography.class);
 
   @Override

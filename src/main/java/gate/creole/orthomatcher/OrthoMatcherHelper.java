@@ -1,21 +1,22 @@
 package gate.creole.orthomatcher;
 
-import gate.Annotation;
-import gate.AnnotationSet;
-import gate.creole.ExecutionException;
-import gate.util.InvalidOffsetException;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import gate.Annotation;
+import gate.AnnotationSet;
+import gate.creole.ExecutionException;
+import gate.util.InvalidOffsetException;
 
 public class OrthoMatcherHelper {
 	
-    protected static final Logger log = Logger.getLogger(OrthoMatcherHelper.class);
+    protected static final Logger log = LoggerFactory.getLogger(OrthoMatcherHelper.class);
   
 	  public static boolean straightCompare(String s1,
 	          String s2,
@@ -100,11 +101,11 @@ public class OrthoMatcherHelper {
 	    if (rulesUsedTable!=null) {   
 	    log.debug("Saving table of used orthomatcher rules:");
 	    
-	    StringBuilder table=new StringBuilder();
+	    StringBuffer table=new StringBuffer();
 	    
 	    for(int i=0;i<rulesUsedTable.length;i++) table.append("Rule: ").append(i).append(" fired: ").append(rulesUsedTable[i]).append("\r\n");
 	    
-	    log.debug(table);
+	    log.debug(table.toString());
 	    log.debug("End of table of used Orthomatcher rules"); 
 	    }
 	    else log.debug("Could not save the table of used orthomatcher rules. This also results when no Orthomatcher rule has returned 'true'."); 

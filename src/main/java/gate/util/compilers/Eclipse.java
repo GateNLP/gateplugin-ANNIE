@@ -17,6 +17,20 @@
  */
 package gate.util.compilers;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.StringTokenizer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import gate.Gate;
 import gate.util.Err;
 import gate.util.GateClassLoader;
@@ -36,19 +50,6 @@ import gate.util.compilers.eclipse.jdt.internal.compiler.env.INameEnvironment;
 import gate.util.compilers.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import gate.util.compilers.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import gate.util.compilers.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.StringTokenizer;
-
-import org.apache.log4j.Logger;
 
 /**
  * This class compiles a set of java sources using the JDT compiler from the
@@ -444,5 +445,5 @@ public class Eclipse extends gate.util.Javac {
     }
   }
   
-  private static final Logger log = Logger.getLogger(Eclipse.class);
+  private static final Logger log = LoggerFactory.getLogger(Eclipse.class);
 }

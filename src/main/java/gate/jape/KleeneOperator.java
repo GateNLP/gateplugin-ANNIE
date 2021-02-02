@@ -13,7 +13,6 @@
  */
 package gate.jape;
 
-import org.apache.log4j.Logger;
 import gate.jape.JapeConstants;
 
 import java.io.Serializable;
@@ -32,8 +31,6 @@ import java.io.Serializable;
 public class KleeneOperator implements Serializable {
 
   private static final long serialVersionUID = 5590283708947918804L;
-
-  protected static final Logger log = Logger.getLogger(KleeneOperator.class);
 
   /**
    * Enum containing the defined types of operators.

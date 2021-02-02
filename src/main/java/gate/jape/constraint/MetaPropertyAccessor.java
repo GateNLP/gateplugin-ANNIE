@@ -14,7 +14,8 @@
 
 package gate.jape.constraint;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Accessor which returns a particular property or meta-property of an
@@ -26,7 +27,7 @@ public abstract class MetaPropertyAccessor implements AnnotationAccessor {
 
   private static final long serialVersionUID = 2736859945392088458L;
 
-  protected static final Logger log = Logger.getLogger(MetaPropertyAccessor.class);
+  protected static final Logger log = LoggerFactory.getLogger(MetaPropertyAccessor.class);
 
   public MetaPropertyAccessor() {
     super();

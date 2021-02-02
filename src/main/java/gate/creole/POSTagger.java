@@ -25,8 +25,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.event.Level;
 
 import gate.Annotation;
 import gate.AnnotationSet;
@@ -109,7 +110,7 @@ public class POSTagger extends AbstractLanguageAnalyser {
   public POSTagger() {
   }
 
-  protected Logger logger = Logger.getLogger(this.getClass().getName());
+  protected Logger logger = LoggerFactory.getLogger(this.getClass().getName());
   
   @Override
   public Resource init()throws ResourceInstantiationException{

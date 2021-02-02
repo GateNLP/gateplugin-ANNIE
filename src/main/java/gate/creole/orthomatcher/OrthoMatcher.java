@@ -46,7 +46,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import gate.Annotation;
 import gate.AnnotationSet;
@@ -64,12 +65,13 @@ import gate.util.GateRuntimeException;
 import gate.util.InvalidOffsetException;
 import gate.util.OffsetComparator;
 import gate.util.Out;
+
 @CreoleResource(name="ANNIE OrthoMatcher", comment="ANNIE orthographical coreference component.", helpURL="http://gate.ac.uk/userguide/sec:annie:orthomatcher", icon="ortho-matcher")
 public class OrthoMatcher extends AbstractLanguageAnalyser {
 
   private static final long serialVersionUID = -6258229350677707465L;
 
-  protected static final Logger log = Logger.getLogger(OrthoMatcher.class);
+  protected static final Logger log = LoggerFactory.getLogger(OrthoMatcher.class);
 
   public static final boolean DEBUG = false;
 
