@@ -201,8 +201,6 @@ public class GazetteerList extends gate.creole.AbstractLanguageResource
         
         entries.add(node);
       } // while
-
-      listReader.close();
     } catch(Exception x) {
       throw new ResourceInstantiationException(x.getClass() + ":"
               + x.getMessage(),x);

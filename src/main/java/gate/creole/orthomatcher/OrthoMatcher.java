@@ -258,7 +258,6 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
           }
         }// if
       }//while
-      reader.close();
 
       URL nicknameURL = null;
       if (nicknameFile != null)
