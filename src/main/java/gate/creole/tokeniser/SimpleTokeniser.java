@@ -34,8 +34,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-import org.apache.commons.io.IOUtils;
-
 import gate.AnnotationSet;
 import gate.Factory;
 import gate.FeatureMap;
@@ -153,15 +151,10 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
    */
   @Override
   public Resource init() throws ResourceInstantiationException{
-    BufferedReader bRulesReader = null;
-    try{
-      if(rulesURL != null){
-        bRulesReader = new BufferedReader(new BomStrippingInputStreamReader(rulesURL.openStream(), encoding));
-      }else{
-        //no init data, Scream!
-        throw new ResourceInstantiationException(
-          "No URL provided for the rules!");
-      }
+    if (rulesURL == null)
+      throw new ResourceInstantiationException("No URL provided for the rules!");
+
+    try (BufferedReader bRulesReader = new BufferedReader(new BomStrippingInputStreamReader(rulesURL.openStream(), encoding))){
       initialState = new FSMState(this);
       String line = bRulesReader.readLine();
       ///String toParse = "";
@@ -187,9 +180,6 @@ public class SimpleTokeniser extends AbstractLanguageAnalyser implements ANNIECo
       throw new ResourceInstantiationException(ioe);
     }catch(TokeniserException te){
       throw new ResourceInstantiationException(te);
-    }
-    finally {
-      IOUtils.closeQuietly(bRulesReader);
     }
     return this;
   }

@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -341,10 +340,10 @@ public class BasicAnnotationOrthography implements AnnotationOrthography {
     Pattern spacePat = Pattern.compile("(\\s+)");
     nicknameMap = new HashMap<String, Set<String>>();
     // create the relative URL
-    BufferedReader reader = null;
-    try {
-      reader = new BomStrippingInputStreamReader(fileURL.openStream(),
-              nicknameFileEncoding);
+
+    try (BufferedReader reader = new BomStrippingInputStreamReader(fileURL.openStream(),
+              nicknameFileEncoding)) {
+      
       String lineRead = null;
 
       while((lineRead = reader.readLine()) != null) {
@@ -380,9 +379,8 @@ public class BasicAnnotationOrthography implements AnnotationOrthography {
                           Collections.singleton(nickNameLine.get(1))));
         }
       }
-    } finally {
-      IOUtils.closeQuietly(reader);
     }
+
     return nicknameMap;
   }
 }

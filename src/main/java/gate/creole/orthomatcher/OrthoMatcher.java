@@ -45,7 +45,6 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -235,11 +234,11 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
       "No URL provided for the definition file!");
     }
     String nicknameFile = null;
-    BufferedReader reader = null;
+
     //at this point we have the definition file
-    try{
-      reader = new BomStrippingInputStreamReader(
-          definitionFileURL.openStream(), encoding);
+    try (BufferedReader reader = new BomStrippingInputStreamReader(
+          definitionFileURL.openStream(), encoding)){
+      
       String lineRead = null;
       //boolean foundANickname = false;
       while ((lineRead = reader.readLine()) != null){
@@ -273,10 +272,6 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
     }catch(IOException ioe){
       throw new ResourceInstantiationException(ioe);
     }
-    finally {
-      IOUtils.closeQuietly(reader);
-    }
-
 
     return this;
   } // init()
@@ -1003,10 +998,9 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
           throws IOException {
     // create the relative URL
     URL fileURL = new URL(definitionFileURL.toURL(), nameFile);
-    BufferedReader bufferedReader = null;
-    try {
-      bufferedReader =
-              new BomStrippingInputStreamReader(fileURL.openStream(), encoding);
+
+    try (BufferedReader bufferedReader =
+            new BomStrippingInputStreamReader(fileURL.openStream(), encoding)){
 
       String lineRead = null;
       while((lineRead = bufferedReader.readLine()) != null) {
@@ -1039,8 +1033,6 @@ public class OrthoMatcher extends AbstractLanguageAnalyser {
         }// else
 
       }// while
-    } finally {
-      IOUtils.closeQuietly(bufferedReader);
     }
   }// createAnnotList
 

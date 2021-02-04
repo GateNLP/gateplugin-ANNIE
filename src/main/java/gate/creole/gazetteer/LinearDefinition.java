@@ -15,11 +15,6 @@
  */
 package gate.creole.gazetteer;
 
-import gate.creole.ResourceInstantiationException;
-import gate.util.BomStrippingInputStreamReader;
-import gate.util.Files;
-import gate.util.GateRuntimeException;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -37,7 +32,10 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.io.IOUtils;
+import gate.creole.ResourceInstantiationException;
+import gate.util.BomStrippingInputStreamReader;
+import gate.util.Files;
+import gate.util.GateRuntimeException;
 
 /**
  * Represents a Linear Definition [lists.def] file <br>
@@ -262,29 +260,29 @@ public class LinearDefinition extends gate.creole.AbstractLanguageResource
     if(null == url) {
       throw new ResourceInstantiationException("URL not set (null).");
     }
-    BufferedReader defReader = null;
+
     try {
       if("file".equals(url.getProtocol())) {
         File definitionFile = Files.fileFromURL(url);
         // create an new definition file only if not existing
         definitionFile.createNewFile();
       }
-      defReader =
-              new BomStrippingInputStreamReader((url).openStream(), ENCODING);
 
-      String line;
-      LinearNode node;
-      while(null != (line = defReader.readLine())) {
-        node = new LinearNode(line);
+      try (BufferedReader defReader =
+              new BomStrippingInputStreamReader((url).openStream(), ENCODING);) {
 
-        this.add(node);
+        String line;
+        LinearNode node;
+        while(null != (line = defReader.readLine())) {
+          node = new LinearNode(line);
 
-      } // while
+          this.add(node);
+
+        } // while
+      }
       isModified = false;
     } catch(Exception x) {
       throw new ResourceInstantiationException(x);
-    } finally {
-      IOUtils.closeQuietly(defReader);
     }
   } // load();
 

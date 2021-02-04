@@ -16,6 +16,15 @@
  */
 package hepple.postag;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.StringTokenizer;
+
 /**
  * Title:        HepTag
  * Description:  Mark Hepple's POS tagger
@@ -26,17 +35,6 @@ package hepple.postag;
  */
 
 import gate.util.BomStrippingInputStreamReader;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.StringTokenizer;
-
-import org.apache.commons.io.IOUtils;
 
 /**
  * A {@link java.util.HashMap} that maps from lexical entry
@@ -67,18 +65,14 @@ class Lexicon extends HashMap<String,List<String>> {
   
   public Lexicon(URL lexiconURL, String encoding, String separator) throws IOException{
     String line;
-    BufferedReader lexiconReader = null;
-    InputStream lexiconStream = null;
     
-    try {
-      lexiconStream = lexiconURL.openStream();
+    // the PR doesn't set a default encoding but to create the reader here
+    // we need to pass one in so use the default charset. This is exactly what
+    // would happen internally if we used the constructor without an encoding
+    // anyway so this just makes things nicely explicit
+    try (BufferedReader lexiconReader = new BomStrippingInputStreamReader(lexiconURL.openStream(),
+    		encoding != null ? encoding : Charset.defaultCharset().name())) {
       
-      if(encoding == null) {
-        lexiconReader = new BomStrippingInputStreamReader(lexiconStream);
-      } else {
-        lexiconReader = new BomStrippingInputStreamReader(lexiconStream,encoding);
-      }
-  
       line = lexiconReader.readLine();
       String entry;
       List<String> categories;
@@ -96,10 +90,6 @@ class Lexicon extends HashMap<String,List<String>> {
   
         line = lexiconReader.readLine();
       }//while(line != null)
-    }
-    finally {
-      IOUtils.closeQuietly(lexiconReader);
-      IOUtils.closeQuietly(lexiconStream);
     }
   }//public Lexicon(URL lexiconURL) throws IOException
 

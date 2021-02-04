@@ -16,12 +16,20 @@
 
 package gate.creole.gazetteer;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.StringReader;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 import java.util.regex.Pattern;
-
-import org.apache.commons.io.IOUtils;
 
 import gate.creole.ResourceInstantiationException;
 import gate.util.BomStrippingInputStreamReader;
@@ -166,15 +174,13 @@ public class GazetteerList extends gate.creole.AbstractLanguageResource
    */
   @SuppressWarnings("resource")
   public void load(boolean isOrdered) throws ResourceInstantiationException {
-    BufferedReader listReader = null;
     
-    try {
-      if(null == url) {
-        throw new ResourceInstantiationException("URL not specified (null).");
-      }
+    if(null == url) {
+      throw new ResourceInstantiationException("URL not specified (null).");
+    }
 
-      listReader =
-              new BomStrippingInputStreamReader((url).openStream(), encoding);
+    try (BufferedReader listReader = new BomStrippingInputStreamReader((url).openStream(), encoding)){
+      
       String line;
       int linenr = 0;
       Pattern emptyPattern = Pattern.compile("\\s*");
@@ -201,9 +207,7 @@ public class GazetteerList extends gate.creole.AbstractLanguageResource
       throw new ResourceInstantiationException(x.getClass() + ":"
               + x.getMessage(),x);
     }
-    finally {
-      IOUtils.closeQuietly(listReader);
-    }
+
     isModified = false;
   } // load ()
 

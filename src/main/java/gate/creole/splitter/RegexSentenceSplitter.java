@@ -13,21 +13,36 @@
  */
 package gate.creole.splitter;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.*;
-import java.util.regex.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import org.apache.commons.io.IOUtils;
-
-import gate.*;
-import gate.creole.*;
+import gate.AnnotationSet;
+import gate.Factory;
+import gate.FeatureMap;
+import gate.Resource;
+import gate.creole.ANNIEConstants;
+import gate.creole.AbstractLanguageAnalyser;
+import gate.creole.ExecutionException;
+import gate.creole.ResourceInstantiationException;
+import gate.creole.ResourceReference;
 import gate.creole.metadata.CreoleParameter;
 import gate.creole.metadata.CreoleResource;
 import gate.creole.metadata.Optional;
 import gate.creole.metadata.RunTime;
-import gate.util.*;
+import gate.util.BomStrippingInputStreamReader;
+import gate.util.InvalidOffsetException;
 
 /**
  * A fast sentence splitter replacement based on regular expressions.
@@ -105,14 +120,13 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
 
   protected Pattern compilePattern(URL paternsListUrl, String encoding)
           throws UnsupportedEncodingException, IOException {
-    BufferedReader reader = null;
+
     StringBuffer patternString = new StringBuffer();
     
-    try {
-      reader =
-              new BomStrippingInputStreamReader(paternsListUrl.openStream(),
-                      encoding);
-      
+    try (BufferedReader reader =
+            new BomStrippingInputStreamReader(paternsListUrl.openStream(),
+                    encoding)){
+
       String line = reader.readLine();
       while(line != null) {
         line = line.trim();
@@ -126,8 +140,6 @@ public class RegexSentenceSplitter extends AbstractLanguageAnalyser {
         // move to next line
         line = reader.readLine();
       }
-    } finally {
-      IOUtils.closeQuietly(reader);
     }
     return Pattern.compile(patternString.toString());
   }

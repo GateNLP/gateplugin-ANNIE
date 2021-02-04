@@ -39,15 +39,12 @@
 package hepple.postag;
 
 
-import gate.util.BomStrippingInputStreamReader;
-import gnu.getopt.Getopt;
-import gnu.getopt.LongOpt;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -55,7 +52,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import org.apache.commons.io.IOUtils;
+import gate.util.BomStrippingInputStreamReader;
+import gnu.getopt.Getopt;
+import gnu.getopt.LongOpt;
 
 /**
  * A Java POS Tagger
@@ -248,15 +247,10 @@ public class POSTagger {
    */
   @SuppressWarnings("resource")
   public void readRules(URL rulesURL) throws IOException, InvalidRuleException{
-    BufferedReader rulesReader = null;
-    
-    try {
-      if(encoding == null) {
-        rulesReader = new BomStrippingInputStreamReader(rulesURL.openStream());
-      } else {
-        rulesReader = new BomStrippingInputStreamReader(rulesURL.openStream(), this.encoding);
-      }
-  
+
+    try (BufferedReader rulesReader = new BomStrippingInputStreamReader(rulesURL.openStream(),
+    		encoding != null ? encoding : Charset.defaultCharset().name())) {
+
       String line;
       Rule newRule;
   
@@ -278,9 +272,6 @@ public class POSTagger {
   
         line = rulesReader.readLine();
       }//while(line != null)
-    }
-    finally {
-      IOUtils.closeQuietly(rulesReader);
     }
   }//public void readRules()
 
@@ -395,13 +386,11 @@ public class POSTagger {
 
       for(int i = 0; i < fileNames.length; i++){
         String file = fileNames[i];
-        BufferedReader reader = null;
         
-        try {
-          reader = new BufferedReader(new FileReader(file));
-        
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+
           String line = reader.readLine();
-  
+
           while(line != null){
             StringTokenizer tokens = new StringTokenizer(line);
             List<String> sentence = new ArrayList<String>();
@@ -423,9 +412,6 @@ public class POSTagger {
             }//while(iter.hasNext())
             line = reader.readLine();
           }//while(line != null)
-        }
-        finally {
-          IOUtils.closeQuietly(reader);
         }
 //
 //
@@ -469,11 +455,8 @@ public class POSTagger {
    */
   @SuppressWarnings("unused")
   private static List<List<String>> readInput(String file) throws IOException{
-    BufferedReader reader = null;
-    
-    try {
-      reader = new BufferedReader(new FileReader(file));
-    
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(file))){
       String line = reader.readLine();
       List<List<String>> result = new ArrayList<List<String>>();
       while(line != null){
@@ -484,9 +467,6 @@ public class POSTagger {
         line = reader.readLine();
       }//while(line != null)
       return result;
-    }
-    finally {
-      IOUtils.closeQuietly(reader);
     }
   }//private static List readInput(File file) throws IOException
 
