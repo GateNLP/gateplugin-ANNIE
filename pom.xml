@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>uk.ac.gate</groupId>
 			<artifactId>gate-compiler-jdt</artifactId>
-			<version>4.3.2-P20140317-1600</version>
+			<version>3.24.0</version>
 		</dependency>
 
 	</dependencies>
