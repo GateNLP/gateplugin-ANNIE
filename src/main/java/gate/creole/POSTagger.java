@@ -110,7 +110,7 @@ public class POSTagger extends AbstractLanguageAnalyser {
   public POSTagger() {
   }
 
-  protected transient Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+  protected Logger logger = LoggerFactory.getLogger(this.getClass().getName());
   
   @Override
   public Resource init()throws ResourceInstantiationException{
