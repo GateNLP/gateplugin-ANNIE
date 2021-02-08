@@ -181,7 +181,13 @@ public class GazetteerNode {
     StringBuffer str = new StringBuffer();
     if (featureMap instanceof LinkedHashMap) {
       for (Map.Entry<String,Object> entry : featureMap.entrySet()) {
-        str.append(separator).append(entry.getKey()).append("=").append(entry.getValue());
+        if (entry.getKey() != null && !entry.getKey().trim().isEmpty() &&
+            entry.getValue() != null && !entry.getValue().toString().isEmpty()) {
+          // only store fields with both key and value
+          // it makes no sense to store =value and storing key= gets dropped
+          // on reload so no point writing it out either
+          str.append(separator).append(entry.getKey()).append("=").append(entry.getValue());
+        }
       }
     } else {
       // sort into a predictable order
@@ -189,7 +195,14 @@ public class GazetteerNode {
       Collections.sort(sortedKeys);
       for(Iterator<String> it = sortedKeys.iterator(); it.hasNext();) {
         String key = it.next();
-        str.append(separator).append(key).append("=").append(featureMap.get(key).toString());
+        String value = featureMap.get(key).toString().trim();
+        if (key != null && !key.isEmpty() &&
+            value != null && !value.isEmpty()) {
+          // only store fields with both key and value
+          // it makes no sense to store =value and storing key= gets dropped
+          // on reload so no point writing it out either
+          str.append(separator).append(key).append("=").append(value);
+        }
       }
     }
     return str.toString();
