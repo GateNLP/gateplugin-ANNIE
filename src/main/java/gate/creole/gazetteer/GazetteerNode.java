@@ -196,7 +196,7 @@ public class GazetteerNode {
       for(Iterator<String> it = sortedKeys.iterator(); it.hasNext();) {
         String key = it.next();
         String value = featureMap.get(key).toString().trim();
-        if (key != null && !key.isEmpty() &&
+        if (!key.isEmpty() &&
             value != null && !value.isEmpty()) {
           // only store fields with both key and value
           // it makes no sense to store =value and storing key= gets dropped
