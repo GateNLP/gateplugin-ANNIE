@@ -13,6 +13,9 @@
  */
 package gate.creole.gazetteer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import gate.creole.ANNIEConstants;
 
 /**
@@ -212,21 +215,25 @@ public class LinearNode {
    */
   @Override
   public String toString() {
-    String result = list + ':' + major;
-    if((null != minor) && (0 != minor.length())) result += ':' + minor;
-    if((null != language) && (0 != language.length())) {
-      if((null == minor) || (0 == minor.length())) result += ':';
-      result += ':' + language;
-    }
-    // if the annotation type is Lookup we don't really need to add
-    // it to the definition file
-    if((null != annotationType) && (0 != annotationType.length())
-        && !annotationType.equals(ANNIEConstants.LOOKUP_ANNOTATION_TYPE)) {
-      if((null == minor) || (0 == minor.length())) result += ':';
-      if(language == null || (0 == language.length())) result += ':';
-      result += ':' + annotationType;
-    }
-    return result;
+
+	List<String> parts = new ArrayList<String>();
+
+	// add all the parts (or the empty string if not set)
+	parts.add(list);
+	parts.add(major);
+	parts.add(minor != null ? minor.trim() : "");
+	parts.add(language != null ? language.trim() : "");
+	parts.add(annotationType != null && !annotationType.equals(ANNIEConstants.LOOKUP_ANNOTATION_TYPE) ? annotationType.trim() : "");
+
+	// remove trailing empty values from the list
+	for (int i = parts.size() - 1 ; i > 0 ; --i) {
+		if (!parts.get(i).equals("")) break;
+
+		parts.remove(i);
+	}
+
+	// join the remaining parts using : as the separator
+	return String.join(":", parts);
   }
 
   @Override
