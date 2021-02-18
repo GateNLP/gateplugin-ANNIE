@@ -58,7 +58,7 @@ CAYMAN ISLANDS:ISO2=KY:ISO3=CYM:name=The Cayman Islands
 CENTRAL AFRICAN REPUBLIC:ISO2=CF:ISO3=CAF:name=The Central African Republic
 CHAD:ISO2=TD:ISO3=TCD:name=The Republic of Chad
 CHILE:ISO2=CL:ISO3=CHL:name=The Republic of Chile
-CHINA:ISO2=CN:ISO2=CHN:name=The People's Republic of China
+CHINA:ISO2=CN:ISO3=CHN:name=The People's Republic of China
 CHRISTMAS ISLAND:ISO2=CX:ISO3=CXR:name=The Territory of Christmas Isalnd
 COCOS:ISO2=CC:ISO3=CCK:name=The Territory of Cocos (Keeling) Islands
 COCOS ISLANDS:ISO2=CC:ISO3=CCK:name=The Territory of Cocos (Keeling) Islands
@@ -91,7 +91,7 @@ ERITREA:ISO2=ER:ISO3=ERI:name=The State of Eritrea
 ESTONIA:ISO2=EE:ISO3=EST:name=The Republic of Estonia
 ESWATINI:ISO2=SZ:ISO3=SWZ:name=The Kingdom of Eswatini
 ETHIOPIA:ISO2=ET:ISO3=ETH:name=The Federal Democratic Republic of Ethiopia
-FALKLAND ISLANDS=ISO2=FK:ISO3=FLK:name=The Falkland Islands
+FALKLAND ISLANDS:ISO2=FK:ISO3=FLK:name=The Falkland Islands
 FAROE ISLANDS:ISO2=FO:ISO3=FRO:name=The Faroe Islands
 FEDERATED STATES OF MICRONESIA:ISO2=FM:ISO3=FSM:name=The Federated States of Micronesia
 FIJI:ISO2=FJ:ISO3=FJI:name=The Republic of Fiji
@@ -128,7 +128,7 @@ HEARD ISLAND:ISO2=HM:ISO3=HMD:name=The Territory of Heard Island and McDonald Is
 MCDONALD ISLANDS:ISO2=HM:ISO3=HMD:name=The Territory of Heard Island and McDonald Islands
 HEARD ISLAND AND MCDONALD ISLANDS:ISO2=HM:ISO3=HMD:name=The Territory of Heard Island and McDonald Islands
 HOLLAND:ISO2=NL:ISO3=NLD:name=The Kingdom of the Netherlands
-HONDURAS:ISO2=HN=ISO3=HND:name=The Republic of Honduras
+HONDURAS:ISO2=HN:ISO3=HND:name=The Republic of Honduras
 HONG KONG:ISO2=HK:ISO3=HKG:name=The Hong Kong Special Administrative Region of China
 HONGKONG:ISO2=HK:ISO3=HKG:name=The Hong Kong Special Administrative Region of China
 HUNGARY:ISO2=HU:ISO3=HUN:name=Hungary
@@ -170,15 +170,15 @@ LITHUANIA:ISO2=LT:ISO3=LTU:name=The Republic of Lithuania
 LUXEMBOURG:ISO2=LU:ISO3=LUX:name=The Grand Duchy of Luxembourg
 MACAO:ISO2=MO:ISO3=MAC:name=Macao Special Administrative Region of China
 MACAU:ISO2=MO:ISO3=MAC:name=Macao Special Administrative Region of China
-NORTH MACEDONIA:ISO2=MK:ISO3=MKD=Republic of North Macedonia
-FORMER YUGOSLAV REPUBLIC OF MACEDONIA:ISO2=MK:ISO3=MKD=Republic of North Macedonia
+NORTH MACEDONIA:ISO2=MK:ISO3=MKD:name=Republic of North Macedonia
+FORMER YUGOSLAV REPUBLIC OF MACEDONIA:ISO2=MK:ISO3=MKD:name=Republic of North Macedonia
 MADAGASCAR:ISO2=MG:ISO3=MDG:name=The Republic of Madagascar
 MALAWI:ISO2=MW:ISO3=MWI:name=The Republic of Malawi
 MALAYSIA:ISO2=MY:ISO3=MYS:name=Malaysia
 MALDIVES:ISO2=MV:ISO3=MDV:name=The Republic of Maldives
 MALI:ISO2=ML:ISO3=MLI:name=The Republic of Mali
 MALTA:ISO2=MT:ISO3=MLT:name=The Republic of Malta
-MALVINAS=ISO2=FK:ISO3=FLK:name=The Falkland Islands
+MALVINAS:ISO2=FK:ISO3=FLK:name=The Falkland Islands
 MARSHALL ISLANDS:ISO2=MH:ISO3=MHL:name=The Republic of the Marshall Islands
 MARTINIQUE:ISO2=MQ:ISO3=MTQ:name=Martinique
 MAURITANIA:ISO2=MR:ISO3=MRT:name=The Islamic Republic of Mauritania
@@ -194,8 +194,8 @@ MONTSERRAT:ISO2=MS:ISO3=MSR:name=Montserrat
 MOROCCO:ISO2=MA:ISO3=MAR:name=The Kingdom of Morocco
 MOZAMBIQUE:ISO2=MZ:ISO3=MOZ:name=The Republic of Mozambique
 MYANMAR:ISO2=MM:ISO3=MMR:name=The Republic of the Union of Myanmar
-NAMIBIA:ISO2=NA:ISO3=NAM:nam=The Republic of Namibia
-NAMIBIE:ISO2=NA:ISO3=NAM:nam=The Republic of Namibia
+NAMIBIA:ISO2=NA:ISO3=NAM:name=The Republic of Namibia
+NAMIBIE:ISO2=NA:ISO3=NAM:name=The Republic of Namibia
 NAURU:ISO2=NR:ISO3=NRU:name=The Republic of Nauru
 NEPAL:ISO2=NP:ISO3=NPL:name=The Federal Democratic Republic of Nepal
 NETHERLANDS:ISO2=NL:ISO3=NLD:name=The Kingdom of the Netherlands
