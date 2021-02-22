@@ -182,9 +182,9 @@
         </entry>
         <entry>
           <string>gate.app.MetadataURL</string>
-          <gate.util.persistence.PersistenceManager-URLHolder>
-            <urlString>$relpath$.annie-defaults-metadata/metadata.xml</urlString>
-          </gate.util.persistence.PersistenceManager-URLHolder>
+          <gate.util.persistence.PersistenceManager-RRPersistence>
+            <uriString>$relpath$.annie-defaults-metadata/metadata.xml</uriString>
+          </gate.util.persistence.PersistenceManager-RRPersistence>
         </entry>
       </localMap>
     </features>
