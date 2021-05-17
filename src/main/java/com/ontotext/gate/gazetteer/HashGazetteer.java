@@ -61,7 +61,8 @@ public class HashGazetteer extends AbstractGazetteer {
         }
         catch (IOException e) {
           throw new ResourceInstantiationException(e);
-        }        
+        }
+        definition.setEncoding(encoding);
         definition.load();
         int i = definition.size();
         listsByNode = definition.loadLists();

@@ -122,7 +122,7 @@ public class DefaultGazetteer extends AbstractGazetteer
     catch (IOException e) {
       throw new ResourceInstantiationException(e);
     }
-    
+    definition.setEncoding(encoding);
     definition.load();
     int linesCnt = definition.size();
     listsByNode = definition.loadLists();
