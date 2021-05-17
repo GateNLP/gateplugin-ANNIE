@@ -14,7 +14,7 @@
 		<artifactId>gate-plugin-base</artifactId>
 
 		<!--  we want to use the latest plugin base but... -->
-		<version>9.0-SNAPSHOT</version>
+		<version>9.1-SNAPSHOT</version>
 		<relativePath/>
 	</parent>
 
@@ -23,7 +23,7 @@
 		     but note that setting this lower than 8.6-SNAPSHOT causes some
 		     issues around the plugins being loaded uner test and the creole
 		     dependency graphs not being accurate. -->
-		<!-- <gate-core.version>8.6-SNAPSHOT</gate-core.version>-->
+		<gate-core.version>9.0</gate-core.version>
 	</properties>
 
 	<!-- this is the description of this plugin -->
