@@ -29,7 +29,7 @@
 	<!-- this is the description of this plugin -->
 	<groupId>uk.ac.gate.plugins</groupId>
 	<artifactId>annie</artifactId>
-	<version>9.1-SNAPSHOT</version>
+	<version>9.2-SNAPSHOT</version>
 
 	<licenses>
 		<license>
