@@ -27,7 +27,7 @@ Rule: internalSplits
       lastNode().getOffset();
   //find the end offset of previous sentences
   Long lastOffset = (Long)doc.getFeatures().get("temp-last-sentence-end");
-  if(lastOffset == null) lastOffset = new Long(0);
+  if(lastOffset == null) lastOffset = 0L;
 //  
 //  AnnotationSet sentences = outputAS.get("Sentence");
 //  Long lastOffset = sentences == null || sentences.isEmpty() ?
@@ -74,7 +74,7 @@ Rule: externalSplits
 //          sentences.lastNode().getOffset();  
   //find the end offset of previous sentences
   Long lastOffset = (Long)doc.getFeatures().get("temp-last-sentence-end");
-  if(lastOffset == null) lastOffset = new Long(0);
+  if(lastOffset == null) lastOffset = 0L;
   
   //get the start offset of the first token.kind==word
   AnnotationSet tokens = inputAS.getContained(lastOffset, endOffset);

@@ -107,7 +107,7 @@ Rule: VBneg
     outputAS.removeAll((gate.AnnotationSet)bindings.get("two"));
     //create the new tokens
     Long ofs0 = firstToken.getStartNode().getOffset();
-    Long ofs1 = new Long(firstToken.getEndNode().getOffset().longValue() - 1);
+    Long ofs1 = firstToken.getEndNode().getOffset() - 1;
     Long ofs2 = ((gate.AnnotationSet)bindings.get("two")).lastNode().getOffset();
     try{
       gate.FeatureMap features;
@@ -150,7 +150,7 @@ Rule: VBnegUppercase
     outputAS.removeAll((gate.AnnotationSet)bindings.get("two"));
     //create the new tokens
     Long ofs0 = firstToken.getStartNode().getOffset();
-    Long ofs1 = new Long(firstToken.getEndNode().getOffset().longValue() - 1);
+    Long ofs1 = firstToken.getEndNode().getOffset() - 1;
     Long ofs2 = ((gate.AnnotationSet)bindings.get("two")).lastNode().getOffset();
     try{
       gate.FeatureMap features;
