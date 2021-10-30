@@ -60,7 +60,7 @@ percent.lst:percent
 person_ending.lst:person_ending
 person_female.lst:person_first:female
 person_female_ambig.lst:person_first:female
-person_female_cap.lst :person_first:female
+person_female_cap.lst:person_first:female
 person_female_lower.lst:person_first:female
 person_full.lst:person_full
 person_male.lst:person_first:male
