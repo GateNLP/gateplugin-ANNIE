@@ -736,7 +736,7 @@ SinglePhaseTransducer SinglePhaseTransducer(String javaimportblock) :
             else if(optionValueTok.image.equalsIgnoreCase("all"))
               t.setRuleApplicationStyle(ALL_STYLE);
             else
-              log.error(errorMsgPrefix(optionValueTok)+
+              log.warn(errorMsgPrefix(optionValueTok)+
                 "ignoring unknown control strategy " + option +
                 " (should be brill, appelt, first, once or all)"
               );
@@ -842,7 +842,7 @@ Rule Rule(String phaseName, String currentImports) :
     {
       try { rulePriority=Integer.parseInt(priorityTok.image); }
       catch(NumberFormatException e) {
-        log.error(errorMsgPrefix(priorityTok)+
+        log.warn(errorMsgPrefix(priorityTok)+
           "bad priority spec(" + priorityTok.image +
           "), rule(" + ruleName + ") - treating as 0");
         rulePriority=0;
@@ -933,7 +933,7 @@ LeftHandSide LeftHandSide() :
         try {
           lhs.addBinding(bindingName, cpe, bindingNameSet);
         } catch(JapeException e) {
-          log.warn("duplicate binding name " + bindingName +
+          log.info("duplicate binding name " + bindingName +
             " - ignoring this binding! exception was: " + e.toString()
           );
         }
@@ -1026,7 +1026,7 @@ BasicPatternElement BasicPatternElement() :
       shortTok=<string>
     )
     {
-      log.error(errorMsgPrefix(shortTok)+
+      log.warn(errorMsgPrefix(shortTok)+
         "string shorthand not supported yet, ignoring: " + shortTok.image
       );
     }
@@ -1078,7 +1078,7 @@ KleeneOperator KleeneOperator() :
         if (type != null)
             return new KleeneOperator(type);
         else {
-          log.error(errorMsgPrefix(kleeneOpTok)+
+          log.warn(errorMsgPrefix(kleeneOpTok)+
               "ignoring uninterpretable Kleene op " + kleeneOpTok.image);
           return new KleeneOperator(KleeneOperator.Type.SINGLE);
         }
@@ -1212,7 +1212,7 @@ Pair AttrVal() :
           try {
             val.second = Long.valueOf(attrValTok.image);
           } catch(NumberFormatException e) {
-            log.error(errorMsgPrefix(attrValTok)+
+            log.warn(errorMsgPrefix(attrValTok)+
               "couldn't parse integer " +
               attrValTok.image + " - treating as 0");
             val.second = new Long(0);
@@ -1228,14 +1228,14 @@ Pair AttrVal() :
           try {
             val.second = Double.valueOf(attrValTok.image);
           } catch(NumberFormatException e) {
-            log.error(errorMsgPrefix(attrValTok)+
+            log.warn(errorMsgPrefix(attrValTok)+
               "couldn't parse float " +
               attrValTok.image + " - treating as 0.0");
             val.second = new Double(0.0);
           }
           break;
         default:
-          log.error(errorMsgPrefix(attrValTok)+
+          log.warn(errorMsgPrefix(attrValTok)+
             "didn't understand type of " + attrValTok.image + ": ignoring"
           );
           val.second = new String("");
