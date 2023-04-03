@@ -25,6 +25,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+import gate.creole.metadata.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
@@ -35,10 +36,6 @@ import gate.Factory;
 import gate.FeatureMap;
 import gate.Resource;
 import gate.Utils;
-import gate.creole.metadata.CreoleParameter;
-import gate.creole.metadata.CreoleResource;
-import gate.creole.metadata.Optional;
-import gate.creole.metadata.RunTime;
 import gate.util.GateRuntimeException;
 import gate.util.OffsetComparator;
 import hepple.postag.InvalidRuleException;
@@ -122,10 +119,17 @@ public class POSTagger extends AbstractLanguageAnalyser {
       throw new ResourceInstantiationException(
         "No URL provided for the rules!");
     }
-    try{
-      tagger = new hepple.postag.POSTagger(lexiconURL.toURL(),rulesURL.toURL(), encoding, separator);
-    }catch(IOException | InvalidRuleException e){
-      throw new ResourceInstantiationException(e);
+    if(existingTagger != null) {
+      // we have been called by Factory.duplicate - make a cheap copy of the existing tagger
+      tagger = new hepple.postag.POSTagger(existingTagger);
+      // and set to null so we go the normal route on any future reInit()
+      existingTagger = null;
+    } else {
+      try{
+        tagger = new hepple.postag.POSTagger(lexiconURL.toURL(),rulesURL.toURL(), encoding, separator);
+      }catch(IOException | InvalidRuleException e){
+        throw new ResourceInstantiationException(e);
+      }
     }
     return this;
   }
@@ -501,12 +505,39 @@ Out.prln("POS after execution time:" + postTime);
   public void setLexiconSeparator(String separator) {
     this.separator = separator;
   }
-  
+
+  /**
+   * <em>This method is public only for the benefit of {@link Factory#duplicate}
+   * and should not be called directly</em>
+   */
+  @Sharable
+  public void setExistingTagger(hepple.postag.POSTagger existingTagger) {
+    this.existingTagger = existingTagger;
+  }
+
+  /**
+   * <em>This method is public only for the benefit of {@link Factory#duplicate}
+   * and should not be called directly</em>
+   */
+  public hepple.postag.POSTagger getExistingTagger() {
+    if(existingTagger != null) {
+      return existingTagger;
+    } else {
+      return tagger;
+    }
+  }
+
   public String getLexiconSeparator() {
     return separator;
   }
   
   protected hepple.postag.POSTagger tagger;
+
+  /**
+   * Reference to an existing POSTagger that should be cloned by this instance - will
+   * be null unless this PR was created by Factory.duplicate()
+   */
+  protected hepple.postag.POSTagger existingTagger;
   private ResourceReference lexiconURL;
   private ResourceReference rulesURL;
   private String inputASName;

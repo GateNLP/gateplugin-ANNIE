@@ -145,6 +145,18 @@ public class POSTagger {
       rules = new HashMap<String, List<Rule>>();
       readRules(rulesURL);
     }
+
+
+    /**
+     * Copy constructor to create another POSTagger instance that shares the lexicon
+     * and rule map of the supplied tagger.
+     * @param other
+     */
+    public POSTagger(POSTagger other) {
+      this.encoding = other.encoding;
+      this.lexicon = other.lexicon;
+      this.rules = other.rules;
+    }
     
     
 
