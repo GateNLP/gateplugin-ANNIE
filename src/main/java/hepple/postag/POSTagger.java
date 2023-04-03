@@ -100,7 +100,10 @@ public class POSTagger {
 
     private String encoding;
 
-    static final String staart = "STAART";
+    // Use of "new String()" is deliberate - this is a sentinel value that
+    // is checked using == at various points in this class, and should _not_
+    // compare == to the string STAART coming from anywhere else.
+    static final String staart = new String("STAART");
 
     private String[] staartLex = { staart };
     private String[] deflex_NNP = { "NNP"};
@@ -298,7 +301,7 @@ public class POSTagger {
   protected String[] classifyWord(String wd){
     String[] result;
 
-    if (staart.equals(wd)) return staartLex;
+    if (staart == wd) return staartLex;
 
     List<String> categories = lexicon.get(wd);
     if(categories != null){
