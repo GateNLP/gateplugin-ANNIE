@@ -270,6 +270,12 @@ public class Eclipse extends gate.util.Javac {
         if (sourcesFiltered.containsKey(result)) {
           return false;
         }
+
+        if (result.indexOf("$") != -1) {
+          if (sourcesFiltered.containsKey(result.substring(0, result.indexOf("$"))))
+            return false;
+        }
+
 //        String resourceName = result.replace('.', '/') + ".class";
         Class<?> theClass = null;
         try{
